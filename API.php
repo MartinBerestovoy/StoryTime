@@ -1,5 +1,6 @@
 <?php
-$api_key = "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";
+include "credentials.php";
+
 $prompt = "Give me a motivational frase";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
