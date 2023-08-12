@@ -15,7 +15,14 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, "{\n    \"model\": \"gpt-3.5-turbo\",\n
     {\n        \"role\": \"user\",\n        \"content\": \" . $prompt . \"\n      }\n    ]\n  }");
 
 $response = curl_exec($ch);
-$answer = json_decode($response);
+
+$decoded_response = json_decode($response, true);
+if (isset($decoded_response['choices'][0]['message']['content'])) {
+    $answer = $decoded_response['choices'][0]['message']['content'];
+} else {
+    $answer = "Sorry, I don't understand";   
+}  
+
 var_dump($answer);
 
 curl_close($ch);
