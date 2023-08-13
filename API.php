@@ -1,7 +1,7 @@
 <?php
 include "credentials.php";
 
-$prompt = "Give me a motivational frase";
+$prompt = "Dame una frase motivadora";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -11,7 +11,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Authorization: Bearer ' . $api_key,
 ]);
 curl_setopt($ch, CURLOPT_POSTFIELDS, "{\n    \"model\": \"gpt-3.5-turbo\",\n    
-    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a helpful assistant.\"\n      },\n      
+    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a helpful asistant.\"\n      },\n      
     {\n        \"role\": \"user\",\n        \"content\": \" . $prompt . \"\n      }\n    ]\n  }");
 
 $response = curl_exec($ch);
@@ -23,7 +23,7 @@ if (isset($decoded_response['choices'][0]['message']['content'])) {
     $answer = "Sorry, I don't understand";   
 }  
 
-var_dump($answer);
+echo($answer);
 
 curl_close($ch);
 ?>
