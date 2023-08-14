@@ -21,7 +21,7 @@ if (isset($decoded_response['choices'][0]['message']['content'])) {
     $answer = $decoded_response['choices'][0]['message']['content'];
 } else {
     $answer = "Sorry, I don't understand";   
-}  
+}
 
 echo($answer);
 
