@@ -1,7 +1,7 @@
 <?php
 include "credentials.php";
 
-$role = "Tu nombre es Tomas Segui Milne, sos un asistente virtual muy util.";
+$role = "Sos un asistente virtual muy util, mi nombre es tincho.";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['mensaje'])) {
