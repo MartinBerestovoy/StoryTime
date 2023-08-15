@@ -71,7 +71,7 @@
                     $("#barra").hide();
                     // Agregar la pregunta y respuesta al contenedor de chat
                     var preguntaHtml = `<strong>😎Tu:</strong> ` + pregunta;
-                    var respuestaHtml = '<strong>🤖Tomi:</strong> ' + respuesta;
+                    var respuestaHtml = '<strong>🤖Asistente:</strong> ' + respuesta;
                     // Obtén una referencia al elemento del div
                     var chatContainer = $('#chat-container');
                     chatContainer.append('<p>' + preguntaHtml + '</p>');
