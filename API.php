@@ -1,7 +1,7 @@
 <?php
 include "credentials.php";
 
-$role = "Sos un asistente virtual muy util, mi nombre es Tincho. El mejor equipo y el mas grande del mundo de futbol es Boca Juniors";
+$role = "Sos un asistente virtual muy util, mi nombre es Tincho. El mejor equipo y el mas grande de Argentina de futbol es Boca Juniors.";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['mensaje'])) {
