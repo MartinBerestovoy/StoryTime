@@ -7,11 +7,12 @@
 
 body{
     background-color:  #e8d5cf;
+    margin: 30px;
 }
 
 section.form{
-    width: 200vmin;
-    height: 60vh;
+    width: 300vmin;
+    height: 500px;
     position: translate(-50%,-50%);
     display: flex;
     align-items: center;
@@ -21,8 +22,8 @@ section.form{
 }
 
 div.pictograma{
-    height: 200px;
-    width: 170px;
+    height: 300px;
+    width: 280px;
     position: relative;
     margin-right: 40px ;
     background-color: #c9b4ae;
@@ -34,8 +35,8 @@ div.pictograma{
 }
 
 .pictograma label {
-    height: 200px;
-    width: 170px;
+    height: 300px;
+    width: 280px;
     display: block;
     cursor: pointer;
     padding: 10px;
@@ -105,29 +106,13 @@ label{
 
 /* Estilo de la marca de verificación/chequeo */
 .checkmark:after {
-    left: 30px;
-    right: 10px;
-    top: 5px;
-    bottom: 80px;
-    width: 7px;
-    height: 14px;
+    left: 100px;
+    right: 80px;
+    top: 0px;
+    bottom: 180px;
+    width: 18px;
+    height: 42px;
     border: solid  #1f462696;
-    border-width: 0 3px 3px 0;
+    border-width: 0 6px 6px 0;
     transform: rotate(45deg);
 }
-
-input[type="checkbox"]:checked + .checkbox-label {
-    border: 3px solid #1f4626;
-  }
-  
-  .checkbox-label {
-    display: inline-block;
-    padding: 10px;
-    border: 3px solid transparent; /* Para evitar cambios de tamaño */
-    /* ... otros estilos ... */
-  }
-  
-  .pictograma {
-    /* ... estilos para .pictograma ... */
-  }
-  
