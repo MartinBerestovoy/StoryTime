@@ -1,7 +1,7 @@
 <?php
 include "credentials.php";
 
-$prompt = "Dame una frase motivadora";
+$prompt = "Tell me a motivational quote";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
