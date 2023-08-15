@@ -11,93 +11,108 @@
   <img src="" alt=""> <!--Logo de App-->
   <h1 id="titulo">CREAR LIBRO</h1>
   <!-- Casillas de Verificación -->
-  <form> 
-   <h2>CATEGORIA TEMATICA</h2>
-   <div class="pictograma">
-    <label for="pictogramaGracioso">
-      <input id="gracioso" type="checkbox" value="gracioso" name="personalidad" checked>GRACIOSO
-    </label>
-   </div>
-   <div class="pictograma">
-    <label for="pictogramaDivertido">
-      <input id="divertido" type="checkbox" value="divertido" name="personalidad">DIVERTIDO
-    </label>
-   </div>
-   <div class="pictograma">
-    <label for="pictogramaEstudios">
-      <input id="energico" type="checkbox" value="energico" name="personalidad">ESTUDIOS
-    </label>
-   </div>
-    <br>
-  
-  <br> 
-    <h2>CATEGORIA PERSONAJES</h2>
-   <div>
-    <label for="pictogramaPerro">
-      <input id="perro" type="checkbox" value="perro" name="personalidad">PERRO
-    </label>
-   </div>
-   <div>
-    <label for="pictogramaGato">
-      <input id="gato" type="checkbox" value="gato" name="personalidad">GATO
-    </label>
-   </div>
-   <div>
-    <label for="pictogramaLobo">
-      <input id="lobo" type="checkbox" value="lobo" name="personalidad">LOBO
-    </label>
-   </div>
-   <div>
-    <label for="pictogramaTRex">
-      <input id="tRex" type="checkbox" value="tRex" name="personalidad">T REX
-    </label>
-   </div>
-   <div>
-      <label for="pictogramaTortuga">
-        <input id="tortuga" type="checkbox" value="tortuga" name="personalidad">TORTUGA
-      </label>
-  </div>
-    <br> 
-  <br>
-    <h2>CATEGORIA LUGAR</h2>
-    <div>
-    <label for="pictogramaShopping">
-      <input id="shopping" type="checkbox" value="shopping" name="personalidad" checked>SHOPPING
-    </label>
-   </div>
-   <div>
-    <label for="pictogramaColegio">
-      <input id="colegio" type="checkbox" value="colegio" name="personalidad">COLEGIO
-    </label>
-   </div>
-    <div>
-    <label for="pictogramaAula">
-      <input id="aula" type="checkbox" value="aula" name="personalidad">AULA
-    </label>
-   </div>
-   <div>
-    <label for="pictogramaPatio">
-      <input id="aula" type="checkbox" value="aula" name="personalidad">PATIO
-    </label>
-   </div>
-   <div>
-    <label for="pictogramaAula">
-      <input id="casa" type="checkbox" value="casa" name="personalidad">CASA
-    </label>
-   </div>
-   <div>
-    <label for="pictogramaCastillo">
-      <input id="castillo" type="checkbox" value="castillo" name="personalidad">CASTILLO
-    </label>
-   </div>
-   <div>
-    <label for="pictogramaNaveEspacial">
-      <input id="NaveEspacial" type="checkbox" value="NaveEspacial" name="personalidad">NAVE ESPACIAL
-    </label>
-   </div>
-    <br>
-    <button type=»submit»><a href="generarLibro.html">CREAR HISTORIA</a> </button>
-  </form>
 
+    <form action="URL_DESTINO" method="post">
+
+      <section class="formTematica">
+        <h2>CATEGORIA TEMATICA</h2>
+        <section class="form">
+          <div class="pictograma">
+            <label for="pictogramaDivertido">
+              <input id="pictogramaDivertido" type="checkbox" value="divertido" name="pictograma">DIVERTIDO
+              <img src="URL_IMAGEN_1" alt="Imagen 1">
+            </label>
+          </div>
+          <div class="pictograma">
+            <label for="pictogramaGracioso">
+              <input id="pictogramaGracioso" type="checkbox" value="gracioso" name="pictograma">GRACIOSO
+            </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaEstudios">
+            <input id="pictogramaEstudios" type="checkbox" value="estudios" name="pictograma">ESTUDIOS
+          </label>
+          </div>
+          <br>
+        </section>
+      </section>
+
+      <section class="formPersonajes">
+        <h2>CATEGORIA PERSONAJES</h2>
+        <section class="form">
+          <div class="pictograma">
+          <label for="pictogramaPerro">
+            <input id="pictogramaPerro" type="checkbox" value="perro" name="pictograma">PERRO
+          </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaGato">
+            <input id="pictogramaGato" type="checkbox" value="gato" name="pictograma">GATO
+          </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaLobo">
+            <input id="pictogramaLobo" type="checkbox" value="lobo" name="pictograma">LOBO
+          </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaTRex">
+            <input id="pictogramaTRex" type="checkbox" value="tRex" name="pictograma">T REX
+          </label>
+          </div>
+          <div class="pictograma">
+            <label for="pictogramaTortuga">
+              <input id="pictogramaTortuga" type="checkbox" value="tortuga" name="pictograma">TORTUGA
+            </label>
+          </div>
+          
+          <br> 
+        </section>
+      </section>
+      
+      <section class="formLugares">
+      <h2>CATEGORIA LUGAR</h2>
+        <section class="form">
+          <div class="pictograma">
+          <label for="pictogramaShopping">
+            <input id="pictogramaShopping" type="checkbox" value="shopping" name="pictograma">SHOPPING
+          </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaColegio">
+            <input id="pictogramaColegio" type="checkbox" value="colegio" name="pictograma">COLEGIO
+          </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaAula">
+            <input id="pictogramaAula" type="checkbox" value="aula" name="pictograma">AULA
+          </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaPatio">
+            <input id="pictogramaPatio" type="checkbox" value="aula" name="pictograma">PATIO
+          </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaCasa">
+            <input id="pictogramaCasa" type="checkbox" value="casa" name="pictograma">CASA
+          </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaCastillo">
+            <input id="pictogramaCastillo" type="checkbox" value="castillo" name="pictograma">CASTILLO
+          </label>
+          </div>
+          <div class="pictograma">
+          <label for="pictogramaNaveEspacial">
+            <input id="pictogramaNaveEspacial" type="checkbox" value="NaveEspacial" name="pictograma">NAVE ESPACIAL
+          </label>
+          </div>
+          <br>
+        </section>
+      </section>
+      <button type=»submit»><a href="generarLibro.html">CREAR HISTORIA</a> </button>
+    </form>
+ 
 </body>
 </html>

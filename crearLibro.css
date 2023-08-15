@@ -6,15 +6,54 @@
 }
 
 body{
-    background-color: #e8d5cf;
+    background-color:  #e8d5cf;
 }
 
-section{
-    width: 100vmin;
-    height: 100vh;
-    position: absolute;
+section.form{
+    width: 160vmin;
+    height: 60vh;
+    position: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
 }
 
-.pictograma{
-    border: 1px black;
-} 
+div.pictograma{
+    height: 200px;
+    width: 170px;
+    position: relative;
+    margin-right: 40px ;
+}
+
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #c9b4ae;
+    border-radius: 10%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    outline: none;
+    box-shadow: 15px 15px 25px #1f462696;
+}
+
+input[type="checkbox"]:after{ /* Ver mejor creo que tiene framework minuto 7:30 de video*/
+    position: absolute;   
+    content:"/fill";
+}
+
+
+input[type="checkbox"]:hover{
+    transform: scale(1.08);
+}
+
+label{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+}
