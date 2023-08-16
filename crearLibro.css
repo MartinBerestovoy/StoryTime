@@ -116,3 +116,8 @@ label{
     border-width: 0 6px 6px 0;
     transform: rotate(45deg);
 }
+
+img {
+    height: 250px;
+    width: auto;
+}
