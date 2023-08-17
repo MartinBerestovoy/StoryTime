@@ -1,0 +1,82 @@
+ body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+    background: #e8d5cf;
+ }
+
+ /**/
+ div.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+ }
+
+ div.form h1{
+    text-align:center;
+    padding: 0 0 20px 0;
+ }
+
+ div.form form{
+    padding: 0 40px;
+    box-sizing: border-box;
+ }
+
+ .username input{
+    width: 100%;
+    padding: 0 10px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background-color: solid white;
+    outline: none;
+ }
+
+/*ver que hagooooo CON ESTOOOOOOOOOO
+    position: absolute;
+    top: 50%;
+    color: #18311c;
+    transform: translate(-50%);
+    font-size: 16px;
+    pointer-events: none;
+ }
+ */
+
+ .username input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px; /* Esto hará que los bordes sean redondeados */
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.username input:focus {
+    border-color: #18311c;
+}
+
+.username label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 100px;
+}
+
+div.username{
+    display: flex;
+}
+
+img{
+    width: 250px;
+    height: auto;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+}
+
+
+ 
+
