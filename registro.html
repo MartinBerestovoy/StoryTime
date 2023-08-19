@@ -4,25 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registro.css">
     <title>Document</title>
 </head>
 <body>
-  <img src="" alt=""> <!--Logo de App-->
-  <h1 id="titulo">REGISTRO</h1>
-  <form>
-  <div>
-      <label for=»name»> Nombre Usuario: </label>
-      <input type=»text» id=»name» required/>
-    </div><br>
-    <div>
-      <label for=»password»> Contraseña: </label>
-      <input type=»password» id=»password» required/>
-    </div><br>
-    <div>
-      <label for=»password»> Contraseña: </label>
-      <input type=»password» id=»password» required/>
-    </div><br>
-    <button type=»submit»><a href="bibloteca.html">Login</a> </button>
-  </form>
+  <div class="form">
+    <img src="imgProyecto/logo.png" alt=""> <!--Logo de App-->
+      <h1 id="titulo">REGISTRO</h1>
+  
+      <form method="post">
+        <div class="username">
+          <label id="nombre"> NOMBRE DE USUARIO</label>
+          <div class="input">
+            <input type="text" required>
+          </div>
+
+          <div class="username">
+            <label id="email"> EMAIL</label>
+            <div class="input">
+              <input type="text" required>
+            </div>
+  
+        </div>
+        <div class="username">
+          <label id="contrasena1"> CONTRASEÑA</label>
+          <div class="input"></div>
+            <input type="password" required>
+          </div>
+  
+        <div class="username">
+          <label id="contrasena2"> REPETIR CONTRASEÑA</label>
+          <div class="input"></div>
+          <input type="password" required>
+        </div>
+  
+        <div class="submitBtn">
+          <input type="submit" value="INICIAR">
+        </div>
+      </form>
+    </div>
 </body>
 </html>

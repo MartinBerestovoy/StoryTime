@@ -1,0 +1,102 @@
+/* Estilos globales */
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #e8d5cf;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333;
+ }
+ 
+ /* define un ancho máximo y estilo para el formulario, asegurando que esté centrado */
+ .form {
+    max-width: 422px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+ }
+ 
+ /* centra la imagen del logo y establece un margen debajo de ella */
+ img {
+    display: block;
+    width: 250px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    max-width: 400px;
+ }
+ 
+ /* establece el tamaño de fuente y el margen inferior del título del formulario */
+ #titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+ }
+ 
+ .username {
+    margin-bottom: 20px;
+ }
+ 
+ /* son mostradas en bloques con un peso de fuente en negrita. */
+ label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+ }
+
+ label#email {
+    margin-top: 15px;
+ }
+ 
+ .input {
+    width: 400px;
+    height: 43;
+ 
+ }
+ 
+ /* definen estilos para los campos de texto y contraseñas. Están configurados para tener un fondo blanco y bordes redondeados */
+ input[type="text"], input[type="password"] {
+    width: 400px;
+    display: flex;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 18px;
+ }
+ 
+ /* definen estilos para los campos de texto y contraseñas. Están configurados para tener un fondo blanco y bordes redondeados */
+ input[type="submit"] {
+    display: block;
+    width: 422px;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 3px solid #7e6c66;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+ }
+ 
+ /* define estilos para el botón de envío del formulario */
+ input[type="submit"]:hover {
+    background-color: #896362;
+ }
+ 
+ /* definen estilos para el enlace que lleva a la página de registro. */
+ .registrarse {
+    margin-top: 20px;
+ }
+ 
+ /* definen estilos para el enlace que lleva a la página de registro. */
+ a {
+    color: #3498db;
+    text-decoration: none;
+ }
+ 
+ a:hover {
+    text-decoration: underline;
+ }
+ 
