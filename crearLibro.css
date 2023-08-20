@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+
+div.h1{
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+}
+
 /* Pongo color de fondo y margen al body */
 body{
     background-color:  #e8d5cf;
@@ -15,7 +21,6 @@ body{
 /* modifico la section clase form */
 section.form{
     width: 300vmin;
-    height: 500px;
     position: translate(-50%,-50%);
     display: flex;
     align-items: center;
@@ -152,4 +157,11 @@ button {
 button:hover{
    background-color: #896362;
     
+}
+
+section.form{
+        max-height: 600px;  /* o cualquier otra altura que prefieras */
+        height: 900px;
+        overflow-x: auto;   /* permite el desplazamiento vertical cuando el contenido excede la altura máxima */
+        width: 100%;        /* opcional: ajusta el ancho si es necesario */
 }
