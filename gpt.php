@@ -12,7 +12,7 @@
             <h2 class="mt-3" style="color: black">StoryTime</h2>
             <div style="display: flex; justify-content: center; align-items: center">
                 <span style="display: none" id="barra">
-                    <img style="width: 286px" src="./imagen/barra.gif" alt="Procesando..." />
+                    Procesando...
                 </span>
             </div>
             <div class="container">
