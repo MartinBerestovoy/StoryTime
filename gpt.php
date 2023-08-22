@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPT</title>
+    <title>StoryTime</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
         <div class="row">
-            <h2 class="mt-3" style="color: black">Chat IA 📌(GPT-3 Model)</h2>
+            <h2 class="mt-3" style="color: black">StoryTime</h2>
             <div style="display: flex; justify-content: center; align-items: center">
                 <span style="display: none" id="barra">
                     <img style="width: 286px" src="./imagen/barra.gif" alt="Procesando..." />
@@ -70,8 +70,8 @@
                 success: function(respuesta) {
                     $("#barra").hide();
                     // Agregar la pregunta y respuesta al contenedor de chat
-                    var preguntaHtml = `<strong>😎Tu:</strong> ` + pregunta;
-                    var respuestaHtml = '<strong>🤖Asistente:</strong> ' + respuesta;
+                    var preguntaHtml = `<strong>User:</strong> ` + pregunta;
+                    var respuestaHtml = '<strong>StoryTeller:</strong> ' + respuesta;
                     // Obtén una referencia al elemento del div
                     var chatContainer = $('#chat-container');
                     chatContainer.append('<p>' + preguntaHtml + '</p>');
