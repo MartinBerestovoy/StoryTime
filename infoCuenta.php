@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" href="infoCuenta.css">
+    <link rel="stylesheet" href="styles/infoCuenta.css">
 </head>
 <body>
   <section class="perfil-container">
