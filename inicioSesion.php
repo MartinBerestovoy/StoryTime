@@ -37,7 +37,7 @@
       </div>
 
       <div class="registrarse">
-        QUIERO HACER EL <a href="registro.html">REGISTRO</a>
+        QUIERO HACER EL <a href="registro.php">REGISTRO</a>
       </div>
     </form>
   </div>
