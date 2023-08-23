@@ -34,6 +34,7 @@ div.pictograma{
     width: 280px;
     position: relative;
     margin-right: 40px ;
+    margin-left: 15px;
     background-color: #c9b4ae;
     border-radius: 10%;
     cursor: pointer;
@@ -160,7 +161,7 @@ button:hover{
 }
 
 section.form{
-        max-height: 600px;  /* o cualquier otra altura que prefieras */
+        max-height: 800px;  /* o cualquier otra altura que prefieras */
         height: 900px;
         overflow-x: auto;   /* permite el desplazamiento vertical cuando el contenido excede la altura máxima */
         width: 100%;        /* opcional: ajusta el ancho si es necesario */
