@@ -1,0 +1,168 @@
+/* Afecto todo */
+*{
+    font-family: 'Verdana', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+div.h1{
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+}
+
+/* Pongo color de fondo y margen al body */
+body{
+    background-color:  #e8d5cf;
+    margin: 30px;
+}
+
+/* modifico la section clase form */
+section.form{
+    width: 300vmin;
+    position: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+/* modifico los div clase pictograma dentro del form */
+div.pictograma{
+    height: 300px;
+    width: 280px;
+    position: relative;
+    margin-right: 40px ;
+    margin-left: 15px;
+    background-color: #c9b4ae;
+    border-radius: 10%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    outline: none;
+    box-shadow: 15px 15px 25px #1f462696;
+}
+
+/* modificamos los label dentro de los div clase pictograma dentro del form */
+.pictograma label {
+    height: 300px;
+    width: 280px;
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+
+div.pictograma:hover{
+    transform: scale(1.08);
+}
+
+div.pictograma:checked{
+border: 3px solid #1f462696;
+}
+
+label{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+/* Ocultar el checkbox original */
+.custom-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Crear un cuadro que será nuestra representación visual del checkbox */
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+
+    border-radius: 50%; /* Hace que el cuadro sea un círculo */
+}
+
+/* Estilo del cuadro cuando el mouse está encima */
+.pictograma:hover .checkmark {
+    background-color: #f0f0f0;
+}
+
+/* Estilo del cuadro cuando el checkbox está marcado */
+.custom-checkbox:checked ~ .checkmark {
+    background-color: #1f462696;
+}
+
+/* Crear la marca de verificación/chequeo (oculta cuando no está marcada) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Mostrar la marca de verificación/chequeo cuando el checkbox está marcado */
+.custom-checkbox:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Estilo de la marca de verificación/chequeo */
+.checkmark:after {
+    left: 100px;
+    right: 80px;
+    top: 0px;
+    bottom: 180px;
+    width: 18px;
+    height: 42px;
+    border: solid  #1f462696;
+    border-width: 0 6px 6px 0;
+    transform: rotate(45deg);
+}
+
+img {
+    height: 250px;
+    width: auto;
+}
+
+div.movimiento{
+    overflow-x:scroll;
+}
+
+button {
+    display: block;
+    width: 1400px;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 3px solid #7e6c66;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+ }
+
+ a.button{
+    /* Cambia el color del texto del enlace a cualquier color que desees, por ejemplo, negro */
+    color: #000;
+    /* Elimina el subrayado del enlace */
+    text-decoration: none;
+}
+
+button:hover{
+   background-color: #896362;
+    
+}
+
+section.form{
+        max-height: 800px;  /* o cualquier otra altura que prefieras */
+        height: 900px;
+        overflow-x: auto;   /* permite el desplazamiento vertical cuando el contenido excede la altura máxima */
+        width: 100%;        /* opcional: ajusta el ancho si es necesario */
+}
