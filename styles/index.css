@@ -20,16 +20,7 @@ section {
     align-items: center;
  }
 
- /* centra la imagen del logo y establece un margen debajo de ella */
-img {
-    display: block;
-    width: 250px;
-    height: auto;
-    margin: 0 auto 20px auto;
-    max-width: 400px;
- }
-
- a.button {
+ a.button{
    display: block;
    width: 422px;
    padding: 10px;
@@ -52,3 +43,12 @@ a.button:hover{
   background-color: #896362;
    
 }
+
+ /* centra la imagen del logo y establece un margen debajo de ella */
+img {
+    display: block;
+    width: 250px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    max-width: 400px;
+ }

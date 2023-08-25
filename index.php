@@ -12,7 +12,7 @@
     <img src="imgProyecto/logo.png" alt=""> <!--Logo de App-->
     <h1 id="titulo">STORY TIME</h1>
     <div>
-      <a href="inicioSesion.php" class="button">INICIA SESIÓN</a>
+      <a href="inicioSesion.php" class="button" id = "inicio-_sesion">INICIA SESIÓN</a>
     </div>
     <br>
     <div>
