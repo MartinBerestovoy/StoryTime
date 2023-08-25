@@ -165,3 +165,12 @@
  
 </body>
 </html>
+
+<?php
+
+if()//necesito una variable a la que hacer referencia para cndo el picto este cn casilla marcada (bool)
+  {
+    "formTematica" = "formTematica" + "divertido"
+  }
+
+?>
