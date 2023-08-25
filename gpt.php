@@ -63,7 +63,7 @@
             // Realizar la solicitud al servidor PHP
             $.ajax({
                 type: "POST",
-                url: "API.php",
+                url: "textApi.php",
                 data: {
                     mensaje: pregunta
                 },
