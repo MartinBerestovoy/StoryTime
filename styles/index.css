@@ -20,7 +20,7 @@ section {
     align-items: center;
  }
 
- a.button{
+ a.boton{
    display: block;
    width: 422px;
    padding: 10px;
@@ -32,14 +32,14 @@ section {
    cursor: pointer;
 }
 
-a.button{
+a.boton{
    /* Cambia el color del texto del enlace a cualquier color que desees, por ejemplo, negro */
    color: #000;
    /* Elimina el subrayado del enlace */
    text-decoration: none;
 }
 
-a.button:hover{
+a.boton:hover{
   background-color: #896362;
    
 }

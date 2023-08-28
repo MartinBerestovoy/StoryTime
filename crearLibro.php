@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="styles/crearLibro.css">
 </head>
 <body>
-  <img src="" alt=""> <!--Logo de App-->
+  <img src="imgProyecto/logo.png" alt="logo" clas="logo"> <!--Logo de App-->
   <div class="h1">
-    <h1 id="titulo">CREAR LIBRO</h1>
+    <h1 class="headline" id="titulo">CREAR LIBRO</h1>
   </div>
   <br>
   <br>
@@ -21,7 +21,7 @@
     <form action="URL_DESTINO" method="post">
 
       <section class="formTematica">
-        <h2>CATEGORIA TEMATICA</h2>
+        <h2 class="headline">CATEGORIA TEMATICA</h2>
         <section class="form">
           <div class="pictograma">
             <label for="pictogramaDivertido" class="checkbox-label">
@@ -52,7 +52,7 @@
       <br>
 
       <section class="formPersonajes">
-        <h2>CATEGORIA PERSONAJES</h2>
+        <h2 class="headline">CATEGORIA PERSONAJES</h2>
         <br>
         <br>
         <section class="form">
@@ -102,7 +102,7 @@
       <br>
 
       <section class="formLugares">
-      <h2>CATEGORIA LUGAR</h2>
+      <h2 class="headline">CATEGORIA LUGAR</h2>
       <br>
       <br>
         <section class="form">
@@ -162,15 +162,14 @@
       <br>
       <button type="submit"><a href="generarLibro.php" class="button">CREAR HISTORIA</a> </button>
     </form>
- 
-</body>
-</html>
 
-<?php
 
-if()//necesito una variable a la que hacer referencia para cndo el picto este cn casilla marcada (bool)
+    <!--if()//necesito una variable a la que hacer referencia para cndo el picto este cn casilla marcada (bool)
   {
     "formTematica" = "formTematica" + "divertido"
   }
 
-?>
+?> -->
+ 
+</body>
+</html>

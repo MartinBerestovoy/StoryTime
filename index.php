@@ -12,15 +12,15 @@
     <img src="imgProyecto/logo.png" alt=""> <!--Logo de App-->
     <h1 id="titulo">STORY TIME</h1>
     <div>
-      <a href="inicioSesion.php" class="button" id = "inicio-_sesion">INICIA SESIÓN</a>
+      <a href="inicioSesion.php" class="boton" id = "inicio-_sesion">INICIA SESIÓN</a>
     </div>
     <br>
     <div>
-      <a href="registro.php" class="button">REGISTRARSE</a>
+      <a href="registro.php" class="boton">REGISTRARSE</a>
     </div>
     <br>
     <div>   
-      <a href="crearLibro.php" class="button"> INICIA COMO INVITADO </a>
+      <a href="crearLibro.php" class="boton"> INICIA COMO INVITADO </a>
     </div>
     <br>
   </section>

@@ -20,8 +20,6 @@ body{
 
 /* modifico la section clase form */
 section.form{
-    width: 300vmin;
-    position: translate(-50%,-50%);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -130,6 +128,7 @@ label{
 img {
     height: 250px;
     width: auto;
+
 }
 
 div.movimiento{
@@ -166,3 +165,12 @@ section.form{
         overflow-x: auto;   /* permite el desplazamiento vertical cuando el contenido excede la altura máxima */
         width: 100%;        /* opcional: ajusta el ancho si es necesario */
 }
+
+ /* centra la imagen del logo y establece un margen debajo de ella */
+ img.logo {
+    display: block;
+    width: 250px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    max-width: 400px;
+ }
