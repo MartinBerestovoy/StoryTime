@@ -18,7 +18,7 @@
   <br>
   <!-- Casillas de Verificación -->
 
-    <form action="URL_DESTINO" method="post">
+    <form action="handler.php" method="post">
 
       <section class="formTematica">
         <h2 class="headline">CATEGORIA TEMATICA</h2>

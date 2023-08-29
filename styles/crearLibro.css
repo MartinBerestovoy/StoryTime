@@ -52,6 +52,12 @@ div.pictograma{
     margin-bottom: 10px;
 }
 
+.pictograma label .pictograma-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 
 div.pictograma:hover{
     transform: scale(1.08);
@@ -114,10 +120,8 @@ label{
 
 /* Estilo de la marca de verificación/chequeo */
 .checkmark:after {
-    left: 100px;
-    right: 80px;
+    left: 0px;
     top: 0px;
-    bottom: 180px;
     width: 18px;
     height: 42px;
     border: solid  #1f462696;
@@ -174,3 +178,7 @@ section.form{
     margin: 0 auto 20px auto;
     max-width: 400px;
  }
+
+ .pictograma input:checked ~ .span {
+    border: 3px solid green;
+}
