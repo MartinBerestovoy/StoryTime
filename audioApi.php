@@ -4,8 +4,11 @@ include "credentials.php";
 
 $curl = curl_init();
 
+$text = "Hola, soy tincho.";
+$lang = "es";
+
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://text-to-speech-api3.p.rapidapi.com/speak?text=Hola%20mundo%2C%20%20soy%20martin.%20%C2%BFComo%20andan%3F&lang=es",
+	CURLOPT_URL => "https://text-to-speech-api3.p.rapidapi.com/speak?text=$text&lang=$lang",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_ENCODING => "",
 	CURLOPT_MAXREDIRS => 10,
