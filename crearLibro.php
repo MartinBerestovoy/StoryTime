@@ -168,6 +168,6 @@
 
 <?php
 
-$final_prompt = "Crea un libro el cual tenga como tematica " + $tematica[] + ", que tenga de protagonista a " + $personaje[] + " y que se lleve a cabo en " + $lugar[];
+// $final_prompt = "Crea un libro el cual tenga como tematica " + $tematica[] + ", que tenga de protagonista a " + $personaje[] + " y que se lleve a cabo en " + $lugar[];
 
 ?>
