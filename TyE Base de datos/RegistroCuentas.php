@@ -1,6 +1,7 @@
 <?php
 
 //programacion del registro. si el nombre esta en la base de datos no permite registrarse con ese nombre
+
 include "ConexionServer"; //necesario??
 error_reporting(0);
 session_start();
