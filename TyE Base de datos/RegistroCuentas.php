@@ -8,7 +8,7 @@ session_start();
 
 if(isset($_SESSION["username"]))
 {
-  header("Location: panel.php")
+  header("Location: panel.php");
 }
 
 if(isset($_POST["submit"]))
@@ -25,7 +25,7 @@ if(isset($_POST["submit"]))
 
     if(!$result->num_rows > 0 )
     {
-      $sql = "INSERT INTO proyecto2023-emma (username,email,password) VALUE ('$username', '$email', '$password');
+      $sql = "INSERT INTO proyecto2023-emma (username,email,password) VALUE ('$username', '$email', '$password')";
       $result = mysqli_query($conn, $sql);
 
       if($result)
