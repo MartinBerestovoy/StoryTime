@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+  <header  class="site-header"> <a href="index.php" class="site-logo"></a></header>
   <div class="form">
     <img src="imgProyecto/logo.png" alt=""> <!--Logo de App-->
       <h1 id="titulo">REGISTRO</h1>

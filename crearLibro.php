@@ -20,8 +20,8 @@
 
     <form action="handler.php" method="post">
 
+    <h2 class="headline">CATEGORIA TEMATICA</h2>
       <section class="formTematica">
-        <h2 class="headline">CATEGORIA TEMATICA</h2>
         <section class="form">
           <div class="pictograma">
             <label for="pictogramaDivertido" class="checkbox-label">
@@ -51,8 +51,8 @@
       <br>
       <br>
 
+      <h2 class="headline">CATEGORIA PERSONAJES</h2>
       <section class="formPersonajes">
-        <h2 class="headline">CATEGORIA PERSONAJES</h2>
         <br>
         <br>
         <section class="form">
@@ -101,8 +101,8 @@
       <br>
       <br>
 
-      <section class="formLugares">
       <h2 class="headline">CATEGORIA LUGAR</h2>
+      <section class="formLugares">
       <br>
       <br>
         <section class="form">
@@ -163,11 +163,10 @@
       <button type="submit"><a href="generarLibro.php" class="button">CREAR HISTORIA</a> </button>
     </form>
 
+    <!-- $final_prompt = "Crea un libro el cual tenga como tematica " + $tematica[] + ", que tenga de protagonista a " + $personaje[] + " y que se lleve a cabo en " + $lugar[]; -->
+
 </body>
 </html>
 
-<?php
 
-// $final_prompt = "Crea un libro el cual tenga como tematica " + $tematica[] + ", que tenga de protagonista a " + $personaje[] + " y que se lleve a cabo en " + $lugar[];
 
-?>

@@ -6,12 +6,6 @@
     box-sizing: border-box;
 }
 
-
-div.h1{
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
-}
-
 /* Pongo color de fondo y margen al body */
 body{
     background-color:  #e8d5cf;
@@ -40,6 +34,8 @@ div.pictograma{
     border: 3px solid transparent;
     outline: none;
     box-shadow: 15px 15px 25px #1f462696;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 /* modificamos los label dentro de los div clase pictograma dentro del form */
@@ -136,4 +132,10 @@ section.form{
 div:has(input:checked) {
     background-color: green;
   }
+
+
+h2{
+    justify-content: center;  /* Centra horizontalmente */
+
+}
   
