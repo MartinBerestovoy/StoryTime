@@ -1,7 +1,9 @@
 <?php
 
+import ".\.env";
+
 // Crea la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($HOST, $USERNAME, $PASSWORD, $DATABASE);
 
 // Verifica la conexión
 if ($conn->connect_error) {
