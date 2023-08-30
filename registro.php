@@ -41,6 +41,11 @@
         <div class="submitBtn">
           <input type="submit" value="INICIAR">
         </div>
+
+        <div class="registrarse">
+        QUIERO HACER EL <a href="inicioSesion.php">INICIO SESION</a>
+      </div>
+
       </form>
     </div>
 </body>
