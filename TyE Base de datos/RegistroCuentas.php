@@ -2,7 +2,7 @@
 
 //programacion del registro. si el nombre esta en la base de datos no permite registrarse con ese nombre
 
-include "ConexionServer"; //necesario??
+include "conexionServer.php"; 
 error_reporting(0);
 session_start();
 
@@ -25,14 +25,14 @@ if(isset($_POST["submit"]))
 
     if(!$result->num_rows > 0 )
     {
-      $sql = "INSERT INTO proyecto2023-emma (username, email, password) VALUE ('$username', '$email', '$password');
+      $sql = "INSERT INTO proyecto2023-emma (username,email,password) VALUE ('$username', '$email', '$password');
       $result = mysqli_query($conn, $sql);
 
       if($result)
       {
         echo "<script>alert('Usuario registrado con exito')</script>";
         $username = "";
-        $email = "";
+        $email = ""; 
         $_POST["password"] = "";
         $_POST["cpassword"] = "";
       }
@@ -71,19 +71,18 @@ if(isset($_POST["submit"]))
   $email=$_POST["email"];
   $_Password=md5($_POST["password"]);
 
-  $sql="SELECT * FROM tutorials WHERE"
-  $email="$email AND password" $password"";
+  $sql="SELECT * FROM tutorials WHERE email='$email' AND password '$password'";
   $result= mysqli_query($conn, $sql);
 
   if($result -> num_rows > 0)
   {
     $row = mysqli_fetch_assoc($result);
-    $_SESSION ["username"] = $row ["username"];
+    $_SESSION ['username'] = $row ['username'];
     header("Location: index.php");
   }
   else
   {
-    echo "<script>alert("La contraseña o el email son incorrectos") </scripts>";
+    echo "<script>alert('La contraseña o el email son incorrectos')</scripts>";
   }
 }
 
