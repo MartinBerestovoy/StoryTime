@@ -71,7 +71,7 @@ if(isset($_POST["submit"]))
   $_Password=md5($_POST["password"]);
 
   $sql="SELECT * FROM tutorials WHERE"
-  email="$email AND password" $password"";
+  $email="$email AND password" $password"";
   $result= mysqli_query($conn, $sql);
 
   if($result -> num_rows > 0)
