@@ -1,6 +1,7 @@
 <?php
 
-import ".\.env";
+//import ".\.env";
+parse_ini_file(".\.env");
 
 // Crea la conexión
 $conn = new mysqli($HOST, $USERNAME, $PASSWORD, $DATABASE);
