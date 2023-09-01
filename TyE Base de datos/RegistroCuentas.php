@@ -71,7 +71,7 @@ if(isset($_POST["submit"]))
   $email = $_POST["email"];
   $_password = md5($_POST["password"]);
 
-  $sql = "SELECT * FROM USERNAME WHERE email = '$email' AND password '$password'";
+  $sql = "SELECT * FROM USERNAME WHERE email = '$email' AND password = '$password'";
   $result = mysqli_query($conn, $sql);
 
   if($result -> num_rows > 0)
