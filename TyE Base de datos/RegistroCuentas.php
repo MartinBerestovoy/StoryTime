@@ -20,7 +20,7 @@ if(isset($_POST["submit"]))
 
   if($password == $cpassword)
   {
-    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $sql = "SELECT * FROM USERNAME WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
 
     if(!$result->num_rows > 0 )
@@ -44,7 +44,7 @@ if(isset($_POST["submit"]))
     }
     else
     {
-      echo "<script>alert('El correo ya existe')</script>";
+      echo "<script>alert('El correo ya esta en uso')</script>";
     }
   }
   else
@@ -68,11 +68,11 @@ if(isset($_SESSION["username"]));
 
 if(isset($_POST["submit"]))
 {
-  $email=$_POST["email"];
-  $_Password=md5($_POST["password"]);
+  $email = $_POST["email"];
+  $_password = md5($_POST["password"]);
 
-  $sql="SELECT * FROM tutorials WHERE email='$email' AND password '$password'";
-  $result= mysqli_query($conn, $sql);
+  $sql = "SELECT * FROM USERNAME WHERE email = '$email' AND password '$password'";
+  $result = mysqli_query($conn, $sql);
 
   if($result -> num_rows > 0)
   {

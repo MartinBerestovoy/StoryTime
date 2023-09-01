@@ -1,6 +1,5 @@
 <?php
 
-//import ".\.env";
 parse_ini_file(".\.env");
 
 // Crea la conexión
