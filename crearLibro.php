@@ -56,7 +56,7 @@
         <br>
         <br>
         <section class="form">
-          <div class="pictograma">
+          <div class="pictograma" >
           <label for="pictogramaPerro">
             <input id="pictogramaPerro" type="checkbox" class="custom-checkbox" value="perro" name="personajes[]">PERRO
             <span class="checkmark"></span>

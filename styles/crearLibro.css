@@ -17,7 +17,6 @@ section.form{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
 
 }
@@ -84,7 +83,7 @@ img {
 
 }
 
-div.movimiento{
+section{
     overflow-x:scroll;
 }
 
@@ -113,10 +112,11 @@ button:hover{
 }
 
 section.form{
-        max-height: 800px;  /* o cualquier otra altura que prefieras */
+        max-height: 400px;  /* o cualquier otra altura que prefieras */
         height: 900px;
         overflow-x: auto;   /* permite el desplazamiento vertical cuando el contenido excede la altura máxima */
         width: 100%;        /* opcional: ajusta el ancho si es necesario */
+
 }
 
  /* centra la imagen del logo y establece un margen debajo de ella */
@@ -138,4 +138,3 @@ h2{
     justify-content: center;  /* Centra horizontalmente */
 
 }
-  
