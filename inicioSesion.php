@@ -8,8 +8,20 @@
     <link rel="stylesheet" href="styles/inicioSesion.css">
 </head>
 <body>
+
+  <nav class="navVolverAtras" id="contenedorBoton">
+    <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
+    </a></a>
+  </nav>
+
+  <script>
+    function volverAtras() {
+    window.history.back();
+    }
+  </script>
+
   <div class="form">
-  <img src="imgProyecto/logo.png" alt=""> <!--Logo de App-->
+  <img src="imgProyecto/logo.png" alt="" class="logo"> <!--Logo de App-->
     <h1 id="titulo">INICIO DE SESION</h1>
 
     <form method="post">

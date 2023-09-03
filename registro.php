@@ -8,7 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-  <header  class="site-header"> <a href="index.php" class="site-logo"></a></header>
+
+<nav class="navVolverAtras" id="contenedorBoton">
+  <button onclick="volverAtras()">Volver Atrás</button>
+</nav>
+
+<script>
+  function volverAtras() {
+  window.history.back();
+  }
+</script>
+
   <div class="form">
     <img src="imgProyecto/logo.png" alt=""> <!--Logo de App-->
       <h1 id="titulo">REGISTRO</h1>

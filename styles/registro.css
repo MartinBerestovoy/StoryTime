@@ -11,24 +11,14 @@ body {
     color: #333;
  }
 
- .site-header {
-   background-color: #333; /* Color de fondo */
-   color: white; /* Color del texto */
-   text-align: center; /* Alineación del texto */
-   padding: 1em; /* Espaciado interno */
- }
- 
- .site-logo {
-   color: white; /* Color del texto del enlace */
-   text-decoration: none; /* Eliminar subrayado */
-   font-size: 1.5em; /* Tamaño de la fuente */
-   font-weight: bold; /* Grosor del texto */
- }
- 
- .site-logo:hover {
-   color: #ccc; /* Color del enlace al pasar el cursor sobre él */
- }
- 
+ /* Estilo para el contenedor del botón */
+#contenedorBoton {
+   position: fixed; /* Fijar la posición */
+   top: 0; /* Alineación vertical en la parte superior */
+   left: 0; /* Alineación horizontal a la izquierda */
+   z-index: 1000; /* Configurar un z-index alto para que aparezca por encima de otros elementos */
+}
+
  
  /* define un ancho máximo y estilo para el formulario, asegurando que esté centrado */
  .form {
