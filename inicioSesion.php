@@ -11,7 +11,7 @@
 
   <nav class="navVolverAtras" id="contenedorBoton">
     <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
-    </a></a>
+    </a>
   </nav>
 
   <script> //script del nav
