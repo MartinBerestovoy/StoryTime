@@ -14,7 +14,7 @@
     </a></a>
   </nav>
 
-  <script>
+  <script> //script del nav
     function volverAtras() {
     window.history.back();
     }

@@ -12,6 +12,25 @@ body{
     margin: 30px;
 }
 
+ /* Estilo para el contenedor del botón */
+ #contenedorBoton {
+    position: fixed; /* Fijar la posición */
+    top: 0; /* Alineación vertical en la parte superior */
+    left: 0; /* Alineación horizontal a la izquierda */
+    z-index: 1000; /* Configurar un z-index alto para que aparezca por encima de otros elementos */
+ }
+ 
+ img.botonVolver{
+    height: 55px ;
+    width: auto;
+    margin: 5px;
+ }
+ 
+ img.botonVolver:hover{
+   background-color: #628965;
+   border-radius: 50%;
+ }
+ 
 /* modifico la section clase form */
 section.form{
     display: flex;

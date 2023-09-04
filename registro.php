@@ -9,11 +9,12 @@
 </head>
 <body>
 
-<nav class="navVolverAtras" id="contenedorBoton">
-  <button onclick="volverAtras()">Volver Atrás</button>
-</nav>
+  <nav class="navVolverAtras" id="contenedorBoton">
+    <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
+    </a>
+  </nav>
 
-<script>
+<script> //script del nav
   function volverAtras() {
   window.history.back();
   }

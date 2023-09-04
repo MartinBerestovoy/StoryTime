@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="styles/crearLibro.css">
 </head>
 <body>
+  
+  <nav class="navVolverAtras" id="contenedorBoton">
+    <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
+    </a>
+  </nav>
+
+  <script> //script del nav
+    function volverAtras() {
+    window.history.back();
+    }
+  </script>
+
   <img src="imgProyecto/logo.png" alt="logo" clas="logo"> <!--Logo de App-->
   <div class="h1">
     <h1 class="headline" id="titulo">CREAR LIBRO</h1>
