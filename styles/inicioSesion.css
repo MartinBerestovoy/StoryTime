@@ -17,6 +17,7 @@ body {
    top: 0; /* Alineación vertical en la parte superior */
    left: 0; /* Alineación horizontal a la izquierda */
    z-index: 1000; /* Configurar un z-index alto para que aparezca por encima de otros elementos */
+   background-color: #e8d5cf;
 }
 
 img.botonVolver{
