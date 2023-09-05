@@ -25,6 +25,7 @@ body{
     width: auto;
     margin: 5px;
     background-color: #e8d5cf;
+    border-radius: 50%;
  }
  
  img.botonVolver:hover{
@@ -36,10 +37,16 @@ body{
 section.form{
     display: flex;
     align-items: center;
+    width: auto;
     justify-content: center;
     gap: 20px;
-
+    padding-left: 500px;
 }
+
+section#formLugares{
+    padding-left: 1800px;
+}
+
 /* modifico los div clase pictograma dentro del form */
 div.pictograma{
     height: 300px;
@@ -103,13 +110,9 @@ img {
 
 }
 
-section{
-    overflow-x:scroll;
-}
-
 button {
     display: block;
-    width: 1400px;
+    width: auto;
     padding: 10px;
     background-color: #ffffff;
     color: #000000;

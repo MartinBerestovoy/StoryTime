@@ -37,21 +37,21 @@
         <section class="form">
           <div class="pictograma">
             <label for="pictogramaDivertido" class="checkbox-label">
-              <input id="pictogramaDivertido" type="checkbox" class="custom-checkbox" value="divertido" name="tematica[]">DIVERTIDO
+              <input id="pictogramaDivertido" type="radio" class="custom-checkbox" value="divertido" name="tematica[]">DIVERTIDO
               <span class="checkmark"></span>
               <img src="imgProyecto/divertido.png" alt="DIVERTIDO">
             </label>
           </div>
           <div class="pictograma">
             <label for="pictogramaGracioso">
-              <input id="pictogramaGracioso" type="checkbox" class="custom-checkbox" value="gracioso" name="tematica[]">GRACIOSO
+              <input id="pictogramaGracioso" type="radio" class="custom-checkbox" value="gracioso" name="tematica[]">GRACIOSO
               <span class="checkmark"></span>
               <img src="imgProyecto/partirse de risa.png" alt="GRACIOSO">
             </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaEstudios">
-            <input id="pictogramaEstudios" type="checkbox" class="custom-checkbox" value="estudios" name="tematica[]">ESTUDIOS
+            <input id="pictogramaEstudios" type="radio" class="custom-checkbox" value="estudios" name="tematica[]">ESTUDIOS
             <span class="checkmark"></span>
               <img src="imgProyecto/estudio.png" alt="ESTUDIOS">
           </label>
@@ -70,35 +70,35 @@
         <section class="form">
           <div class="pictograma" >
           <label for="pictogramaPerro">
-            <input id="pictogramaPerro" type="checkbox" class="custom-checkbox" value="perro" name="personajes[]">PERRO
+            <input id="pictogramaPerro" type="radio" class="custom-checkbox" value="perro" name="personajes[]">PERRO
             <span class="checkmark"></span>
               <img src="imgProyecto/perro.png" alt="PERRO">
           </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaGato">
-            <input id="pictogramaGato" type="checkbox" class="custom-checkbox" value="gato" name="personajes[]">GATO
+            <input id="pictogramaGato" type="radio" class="custom-checkbox" value="gato" name="personajes[]">GATO
             <span class="checkmark"></span>
               <img src="imgProyecto/gato doméstico.png" alt="Imagen 1">
           </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaLobo">
-            <input id="pictogramaLobo" type="checkbox" class="custom-checkbox" value="lobo" name="personajes[]">LOBO
+            <input id="pictogramaLobo" type="radio" class="custom-checkbox" value="lobo" name="personajes[]">LOBO
             <span class="checkmark"></span>
               <img src="imgProyecto/lobo.png" alt="LOBO">
           </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaTRex">
-            <input id="pictogramaTRex" type="checkbox" class="custom-checkbox" value="tRex" name="personajes[]">T REX
+            <input id="pictogramaTRex" type="radio" class="custom-checkbox" value="tRex" name="personajes[]">T REX
             <span class="checkmark"></span>
               <img src="imgProyecto/Tyrannosaurus Rex.png" alt="T REX">
           </label>
           </div>
           <div class="pictograma">
             <label for="pictogramaBatman">
-              <input id="pictogramaBatman" type="checkbox" class="custom-checkbox" value="batman" name="personajes[]">BATMAN
+              <input id="pictogramaBatman" type="radio" class="custom-checkbox" value="batman" name="personajes[]">BATMAN
               <span class="checkmark"></span>
               <img src="imgProyecto/Batman.png" alt="BATMAN">
             </label>
@@ -120,49 +120,49 @@
         <section class="form">
           <div class="pictograma">
             <label for="pictogramaShopping">
-              <input id="pictogramaShopping" type="checkbox" class="custom-checkbox" value="shopping" name="lugar[]">SHOPPING
+              <input id="pictogramaShopping" type="radio" class="custom-checkbox" value="shopping" name="lugar[]">SHOPPING
               <span class="checkmark"></span>
               <img src="imgProyecto/centro comercial.png" alt="SHOPPING">
             </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaColegio">
-            <input id="pictogramaColegio" type="checkbox" class="custom-checkbox" value="colegio" name="lugar[]">COLEGIO
+            <input id="pictogramaColegio" type="radio" class="custom-checkbox" value="colegio" name="lugar[]">COLEGIO
             <span class="checkmark"></span>
             <img src="imgProyecto/colegio.png" alt="COLEGIO">
           </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaAula">
-            <input id="pictogramaAula" type="checkbox" class="custom-checkbox" value="aula" name="lugar[]">AULA
+            <input id="pictogramaAula" type="radio" class="custom-checkbox" value="aula" name="lugar[]">AULA
             <span class="checkmark"></span>
             <img src="imgProyecto/aula.png" alt="AULA">
           </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaPatio">
-            <input id="pictogramaPatio" type="checkbox" class="custom-checkbox" value="aula" name="lugar[]">PATIO
+            <input id="pictogramaPatio" type="radio" class="custom-checkbox" value="aula" name="lugar[]">PATIO
             <span class="checkmark"></span>
             <img src="imgProyecto/patio.png" alt="PATIO">
           </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaCasa">
-            <input id="pictogramaCasa" type="checkbox" class="custom-checkbox" class="custom-checkbox" value="casa" name="lugar[]">CASA
+            <input id="pictogramaCasa" type="radio" class="custom-checkbox" class="custom-checkbox" value="casa" name="lugar[]">CASA
             <span class="checkmark"></span>
             <img src="imgProyecto/casa.png" alt="CASA">
           </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaCastillo">
-            <input id="pictogramaCastillo" type="checkbox" class="custom-checkbox" value="castillo" name="lugar[]">CASTILLO
+            <input id="pictogramaCastillo" type="radio" class="custom-checkbox" value="castillo" name="lugar[]">CASTILLO
             <span class="checkmark"></span>
             <img src="imgProyecto/castillo.png" alt="CASTILLO">
           </label>
           </div>
           <div class="pictograma">
           <label for="pictogramaNaveEspacial">
-            <input id="pictogramaNaveEspacial" type="checkbox" class="custom-checkbox" value="NaveEspacial" name="lugar[]">NAVE ESPACIAL
+            <input id="pictogramaNaveEspacial" type="radio" class="custom-checkbox" value="NaveEspacial" name="lugar[]">NAVE ESPACIAL
             <span class="checkmark"></span>
             <img src="imgProyecto/nave espacial.png" alt="NAVE ESPACIAL">
           </label>
