@@ -175,8 +175,6 @@
       <button type="submit"><a href="generarLibro.php" class="button">CREAR HISTORIA</a> </button>
     </form>
 
-    <!-- $final_prompt = "Crea un libro el cual tenga como tematica " + $tematica[] + ", que tenga de protagonista a " + $personaje[] + " y que se lleve a cabo en " + $lugar[]; -->
-
 </body>
 </html>
 

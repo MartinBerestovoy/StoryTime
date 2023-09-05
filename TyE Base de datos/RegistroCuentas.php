@@ -14,25 +14,23 @@ if(isset($_SESSION["username"]))
 if(isset($_POST["submit"]))
 {
   $username = $_POST["username"];
-  $email = $_POST["email"];
   $password = md5 ($_POST["password"]);
   $cpassword = md5 ($_POST["cpassword"]);
 
   if($password == $cpassword)
   {
-    $sql = "SELECT * FROM USERNAME WHERE email = '$email'";
+    $sql = "SELECT * FROM ID WHERE USERNAME = '$username'";
     $result = mysqli_query($conn, $sql);
 
     if(!$result->num_rows > 0 )
     {
-      $sql = "INSERT INTO proyecto2023-emma (username,email,password) VALUE ('$username', '$email', '$password')";
+      $sql = "INSERT INTO proyecto2023-emma (username,password) VALUE ('$username','$password')";
       $result = mysqli_query($conn, $sql);
 
       if($result)
       {
         echo "<script>alert('Usuario registrado con exito')</script>";
         $username = "";
-        $email = ""; 
         $_POST["password"] = "";
         $_POST["cpassword"] = "";
       }
@@ -44,7 +42,7 @@ if(isset($_POST["submit"]))
     }
     else
     {
-      echo "<script>alert('El correo ya esta en uso')</script>";
+      echo "<script>alert('El nombre de usuario ya esta en uso')</script>";
     }
   }
   else
@@ -68,10 +66,9 @@ if(isset($_SESSION["username"]));
 
 if(isset($_POST["submit"]))
 {
-  $email = $_POST["email"];
   $_password = md5($_POST["password"]);
 
-  $sql = "SELECT * FROM USERNAME WHERE email = '$email' AND password = '$password'";
+  $sql = "SELECT * FROM ID WHERE USERNAME = '$username' AND password = '$password'";
   $result = mysqli_query($conn, $sql);
 
   if($result -> num_rows > 0)
@@ -82,7 +79,7 @@ if(isset($_POST["submit"]))
   }
   else
   {
-    echo "<script>alert('La contraseña o el email son incorrectos')</scripts>";
+    echo "<script>alert('La contraseña o el nombre de usuario son incorrectos')</scripts>";
   }
 }
 
