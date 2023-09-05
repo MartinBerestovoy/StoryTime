@@ -19,7 +19,7 @@ if(isset($_POST["submit"]))
 
   if($password == $cpassword)
   {
-    $sql = "SELECT * FROM ID WHERE USERNAME = '$email'";
+    $sql = "SELECT * FROM ID WHERE USERNAME = '$username'";
     $result = mysqli_query($conn, $sql);
 
     if(!$result->num_rows > 0 )
