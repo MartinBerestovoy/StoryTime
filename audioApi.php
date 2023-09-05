@@ -8,8 +8,8 @@ include "credentials.php";
 
 $curl = curl_init();
 
-$text = "Hola, soy tincho.";
-$lang = "es";
+$text = "Hola, soy tincho."; // CAMBIAR
+$lang = "es"; //espaniol
 
 curl_setopt_array($curl, [
 	CURLOPT_URL => "https://text-to-speech-api3.p.rapidapi.com/speak?text=$text&lang=$lang",
