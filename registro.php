@@ -30,24 +30,20 @@
           <div class="input">
             <input type="text" required>
           </div>
-
-          <div class="username">
-            <label id="email"> EMAIL</label>
-            <div class="input">
-              <input type="text" required>
-            </div>
-  
         </div>
+
         <div class="username">
           <label id="contrasena1"> CONTRASEÑA</label>
-          <div class="input"></div>
+          <div class="input">
             <input type="password" required>
           </div>
+        </div>
   
         <div class="username">
           <label id="contrasena2"> REPETIR CONTRASEÑA</label>
-          <div class="input"></div>
-          <input type="password" required>
+          <div class="input">
+            <input type="password" required>
+          </div>
         </div>
   
         <div class="submitBtn">

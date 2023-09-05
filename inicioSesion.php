@@ -38,12 +38,6 @@
           <input type="password" required>
         </div>
 
-      <div class="username">
-        <label id="contrasena2">REPETIR CONTRASEÑA</label>
-        <div class="input"></div>
-        <input type="password" required>
-      </div>
-
       <div class="submitBtn">
         <input type="submit" value="Iniciar">
       </div>
