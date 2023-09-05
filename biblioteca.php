@@ -8,12 +8,12 @@
 </head>
 <body>
     <img src="" alt=""> <!--Logo de App-->
-  <h1 id="titulo">BIBLOTECA</h1>
+  <h1 id="titulo">BIBLIOTECA</h1>
   <button>LIBRO 1</button>
   <button>LIBRO 2</button>
   <button>LIBRO 3</button>
   <button>LIBRO 4</button>
-  <button><a href="crearLibro.html"> + </a></button>
+  <button><a href="crearLibro.php"> + </a></button>
 
 </body>
 </html>
