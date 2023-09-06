@@ -172,7 +172,7 @@
       </section>
       <br>
       <br>
-      <button type="submit"><a href="generarLibro.php" class="button">CREAR HISTORIA</a> </button>
+      <button type="submit"><a href="handler.php" class="button">CREAR HISTORIA</a> </button>
     </form>
 
 </body>

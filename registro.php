@@ -47,7 +47,7 @@
         </div>
 
         <div class="submitBtn">
-          <input type="submit"  id="botonEnviar" value="INICIAR">
+          <input type="submit" id="botonEnviar" value="INICIAR">
         </div>
 
         <div class="registrarse">
@@ -101,31 +101,8 @@
         botonEnviar.disabled = true;
       }
     }
-
-    // Se ejecuta cuando la página se carga por completo
-    window.addEventListener("load", function() {
-      // Añade un detector de eventos "submit" al formulario
-      document.getElementById("miFormulario").addEventListener("submit", function(event) {
-        // Obtiene de nuevo los valores de los campos de contraseña
-        var contrasena1 = document.getElementById("contrasena1").value;
-        var contrasena2 = document.getElementById("contrasena2").value;
-
-        // Comprueba si las contraseñas coinciden
-        if (contrasena1 !== contrasena2) {
-          // Detiene el envío del formulario
-          event.preventDefault();
-          // Si las contraseñas no coinciden, muestra una alerta
-          alert("Las contraseñas deben coincidir");
-        }
-      });
-    });
   </script>
-
-
-
-
-
-      </form>
+    </form>
     </div>
 </body>
 </html>
