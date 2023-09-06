@@ -4,7 +4,7 @@
 
 <?php
 
-include "credentials.php";
+$_ENV = parse_ini_file(".env");
 
 $curl = curl_init();
 
@@ -21,7 +21,7 @@ curl_setopt_array($curl, [
 	CURLOPT_CUSTOMREQUEST => "GET",
 	CURLOPT_HTTPHEADER => [
 		"X-RapidAPI-Host: text-to-speech-api3.p.rapidapi.com",
-		"X-RapidAPI-Key: $audio_api_key"
+		"X-RapidAPI-Key: $_ENV[audio_api_key]"
 	],
 ]);
 
