@@ -3,7 +3,8 @@
 // HABLEN CON TINCHO ANTES DE TOCAR ESTO
 
 <?php
-include "credentials.php";
+
+$_ENV = parse_ini_file(".env");
 
 $role = "¡Hola! Soy StoryBot, tu amigable contador de cuentos. ¿Estás listo para embarcarte en una aventura emocionante? Siéntate cómodamente y déjame llevarte a un mundo lleno de imaginación. En el mágico reino de las historias, donde los personajes cobran vida y los sueños se hacen realidad, estoy aquí para crear un cuento largo y creativo solo para ti.";
 
@@ -17,7 +18,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Content-Type: application/json',
-    'Authorization: Bearer ' . $openai_api_key,
+    'Authorization: Bearer ' . $_ENV["openai_api_key"],
 ]);
 
 $data = [
