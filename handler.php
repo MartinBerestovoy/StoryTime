@@ -5,7 +5,7 @@ var_dump($_POST);
 
 // for($i = 0; $i <= count($tematicas); $i++)
 // {
-//     $tematicas = $tematicas . $_POST;
+//     $tematicasLibro = $tematicasLibro . $_POST[];
 // }
 
 // for($i = 0; $i <= count($tematicas); $i++)
@@ -13,6 +13,15 @@ var_dump($_POST);
 //     $tematicas[$i] = $tematicas[$i] . $_POST;
 // }
 
-// $final_prompt = "Crea un libro el cual tenga como tematica " + $tematicas + ", que tenga de protagonista a " + $personajes + " y que se lleve a cabo en " + $lugares;
+$tematicas = $_POST['tematicas'];
+$tematicasConcatenadas = "";
+
+for($i = 0; $i <= count($tematicas); $i++)
+{
+     $tematicasConcatenadas = $tematicasConcatenadas + ", " + $tematicas[$i];
+}
+
+
+$final_prompt = "Crea un libro el cual tenga como tematica " + $tematicasConcatenadas + ", que tenga de protagonista a " + $personajesConcatenados + " y que se lleve a cabo en " + $lugaresConcatenados;
 
 ?>
