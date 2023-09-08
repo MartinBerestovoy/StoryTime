@@ -8,8 +8,30 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="imgProyecto/logo.png" alt=""> <!--Logo de App-->
+    <img src="imgProyecto/logo.png" class="logo" alt=""> <!--Logo de App-->
   <h1 id="titulo">BIBLIOTECA</h1>
+
+  <br>
+  <br>
+  
+  <section class="libros">
+          <div class="libro">
+            <label class="contenidoLibros">
+            </label>
+          </div>
+
+          <div class="libro">
+            <label class="contenidoLibros">
+            </label>
+          </div>
+          <div class="libro">
+            <label class="contenidoLibros">
+          </label>
+          </div>
+          <br>
+        </section>
+      </section>
+      <br>
 
   <button><a href="crearLibro.php"> + </a></button>
 

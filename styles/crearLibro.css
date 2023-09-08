@@ -33,6 +33,15 @@ body{
    border-radius: 50%;
  }
 
+ /* centra la imagen del logo y establece un margen debajo de ella */
+ img.logo {
+    display: block;
+    width: 250px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    max-width: 400px;
+ }
+
  h2{
     text-align: center;  /* Centra horizontalmente */
 }
@@ -151,20 +160,8 @@ section.form{
 
 }
 
- /* centra la imagen del logo y establece un margen debajo de ella */
- img.logo {
-    display: block;
-    width: 250px;
-    height: auto;
-    margin: 0 auto 20px auto;
-    max-width: 400px;
- }
 
  /* Select all div elements that have a checked input child */
 div:has(input:checked) {
     background-color: green;
-  }
-
-  img.logo{
-    justify-content:center ;
   }
