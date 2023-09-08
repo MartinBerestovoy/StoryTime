@@ -106,7 +106,7 @@
 <title>Comprobar contraseñas</title>
   <script>
     // Esta función se llama cuando se hace clic en el botón "submit"
-    function validarAlEnviar() {
+    function CoincideAlEnviar() {
       var contrasena1 = document.getElementById("contrasena1").value;
       var contrasena2 = document.getElementById("contrasena2").value;
 
@@ -120,7 +120,7 @@
       return true;
     }
   </script>
-  
+
     </form>
     </div>
 </body>
