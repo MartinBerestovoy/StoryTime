@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="imgProyecto/logo.png" alt=""> <!--Logo de App-->
+    <img src="imgProyecto/logo.png" class="logo" alt=""> <!--Logo de App-->
   <h1 id="titulo">BIBLIOTECA</h1>
 
   <br>

@@ -11,6 +11,27 @@ body{
     margin: 30px;
 }
 
+/* centra la imagen del logo y establece un margen debajo de ella */
+img.logo {
+    display: block;
+    width: 250px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    max-width: 400px;
+ }
+
+ img.logo{
+    justify-content:center ;
+  }
+
+ h2{
+    text-align: center;  /* Centra horizontalmente */
+}
+
+h1{
+    text-align: center;  /* Centra horizontalmente */
+}
+
 section.libros{
     display: flex;
     align-items: center;
@@ -19,7 +40,7 @@ section.libros{
 
 
 section.libros{
-    max-height: 400px;  /* o cualquier otra altura que prefieras */
+    max-height: 600px;  /* o cualquier otra altura que prefieras */
     height: 900px;
     overflow-x: auto;   /* permite el desplazamiento vertical cuando el contenido excede la altura máxima */
     width: 100%;        /* opcional: ajusta el ancho si es necesario */
@@ -28,8 +49,8 @@ section.libros{
 
 /* modifico los div clase pictograma dentro del form */
 div.libro{
-    min-height: 300px; /* Establece la altura mínima */
-    min-width: 280px; /* Establece el ancho mínimo */
+    min-height: 500px; /* Establece la altura mínima */
+    min-width: 450px; /* Establece el ancho mínimo */
     height: auto; /* Cambia de px a auto para que se ajuste automáticamente al contenido */
     width: 50%; /* Utiliza un porcentaje en lugar de px para el ancho */
     max-width: 280px; /* Establece un ancho máximo para evitar que se expandan demasiado */
