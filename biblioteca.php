@@ -7,12 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="" alt=""> <!--Logo de App-->
+    <img src="imgProyecto/logo.png" alt=""> <!--Logo de App-->
   <h1 id="titulo">BIBLIOTECA</h1>
-  <button>LIBRO 1</button>
-  <button>LIBRO 2</button>
-  <button>LIBRO 3</button>
-  <button>LIBRO 4</button>
+
   <button><a href="crearLibro.php"> + </a></button>
 
 </body>
