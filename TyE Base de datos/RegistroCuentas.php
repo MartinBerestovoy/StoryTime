@@ -64,12 +64,12 @@ if(isset($_POST["submit"]))
 
   $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
   $result = $conn->prepare($sql);
-  $resul->bind_param("ss", $username, $password);
+  $result->bind_param("ss", $username, $password);
   $result->execute();
 
   if($result -> num_rows > 0)
   {
-    $row = mysqli_fetch_assoc($mysql_result);
+    $row = mysqli_fetch_assoc($result);
     $_SESSION ['username'] = $row ['username'];
     header("Location: index.php"); 
   }
