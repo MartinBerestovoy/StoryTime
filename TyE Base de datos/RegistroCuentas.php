@@ -19,7 +19,7 @@ if(isset($_POST["submit"]))
 
   if($password == $cpassword)
   {
-    $sql = "SELECT * FROM ID WHERE USERNAME = '$username'";
+    $sql = "SELECT * FROM ID WHERE USERNAME = '$username'"; //XQ SOLICITA EL ID DEL USUARIO CONDO TODAVIA NO SE REGISTRO. SERA EL ERROR?!?!?!?!
     $result = mysqli_query($conn, $sql);
 
     if(!$result->num_rows > 0 )
