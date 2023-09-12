@@ -35,14 +35,14 @@
         <div class="username">
           <label id="label-contrasena1"> CONTRASEÑA</label>
           <div class="input">
-          <input type="password" id="contrasena1" placeholder="Ingrese la contraseña" oninput="validarContrasenas()" onkeyup="checkContrasenas()" required>
+          <input type="password" id="contrasena1" placeholder="INGRESE LA CONTRASEÑA" oninput="validarContrasenas()" onkeyup="checkContrasenas()" required>
           </div>
         </div>
   
         <div class="username">
           <label id="label-contrasena2"> REPETIR CONTRASEÑA</label>
           <div class="input">
-          <input type="password" id="contrasena2" placeholder="Confirme la contraseña" oninput="validarContrasenas()" onkeyup="checkContrasenas()" required>
+          <input type="password" id="contrasena2" placeholder="CONFIRME LA CONTRASEÑA" oninput="validarContrasenas()" onkeyup="checkContrasenas()" required>
           </div>
         </div>
 

@@ -28,14 +28,14 @@
       <div class="username">
         <label id="nombre"> NOMBRE DE USUARIO</label>
         <div class="input">
-          <input type="text" required>
+          <input type="text" id="usuario" placeholder="INGRESE EL USUARIO" required>
         </div>
 
       </div>
       <div class="username">
-        <label id="contrasena1"> CONTRASEÑA</label>
+        <label id="label-contrasena"> CONTRASEÑA</label>
         <div class="input"></div>
-          <input type="password" required>
+          <input type="password" id="contrasena" placeholder="INGRESE LA CONTRASEÑA" required>
         </div>
 
       <div class="submitBtn">
