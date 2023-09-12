@@ -24,7 +24,7 @@ if(isset($_POST["submit"]))
 
     if(!$result->num_rows > 0 )
     {
-      $sql = "INSERT INTO proyecto2023emma (username,password) VALUE (?, ?)";
+      $sql = "INSERT INTO proyecto2023-emma (username,password) VALUE (?, ?)";
       $result = $conn->prepare($sql);
       $result->bind_param("ss", $username, $password);
       $result->execute();
