@@ -20,12 +20,14 @@ if(isset($_POST["submit"]))
   if($password == $cpassword)
   {
     $sql = "SELECT * FROM ID WHERE USERNAME = '$username'"; 
-    $result = mysqli_query($conn, $sql);
+    $result = $conn->query($sql);
 
     if(!$result->num_rows > 0 )
     {
       $sql = "INSERT INTO proyecto2023-emma (username,password) VALUE (?, ?)";
-      $result = mysqli_query($conn, $sql);
+      $result = $conn->prepare($sql);
+      $result->bind_param("ss", $username, $password);
+      $result->execute();
 
       if($result)
       {
@@ -60,8 +62,8 @@ if(isset($_POST["submit"]))
 {
   $_password = md5($_POST["password"]);
 
-  $sql = "SELECT * FROM ID WHERE USERNAME = '$username' AND password = '$password'";
-  $result = mysqli_query($conn, $sql);
+  $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
+  $result = $conn->query($sql);
 
   if($result -> num_rows > 0)
   {

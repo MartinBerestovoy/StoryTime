@@ -2,24 +2,28 @@
 
 var_dump($_POST);
 
-
-/* for($i = 0; $i <= count($tematicas); $i++)
- {
-     $tematicasLibro = $tematicasLibro . $_POST[];
- }
-
- for($i = 0; $i <= count($tematicas); $i++)
- {
-     $tematicas[$i] = $tematicas[$i] . $_POST;
-}
-*/
-
 $tematicas = $_POST['tematicas'];
 $tematicasConcatenadas = "";
 
 for($i = 0; $i <= count($tematicas); $i++)
 {
      $tematicasConcatenadas .= ", " . $tematicas[$i];
+}
+
+$personajes = $_POST['personajes'];
+$personajesConcatenados = "";
+
+for($i = 0; $i <= count($personaje); $i++)
+{
+     $personajesConcatenados .= ", " . $personajes[$i];
+}
+
+$lugares = $_POST['lugares'];
+$lugaresConcatenados = "";
+
+for($i = 0; $i <= count($lugares); $i++)
+{
+     $lugaresConcatenados .= ", " . $lugares[$i];
 }
 
 
