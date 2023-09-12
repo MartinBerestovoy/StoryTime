@@ -63,18 +63,15 @@ if(isset($_POST["submit"]))
   $_password = md5($_POST["password"]);
 
   $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
-  $result = $conn->query($sql);
+  $result = $conn->prepare($sql);
+  $resul->bind_param("ss", $username, $password);
+  $result->execute();
 
   if($result -> num_rows > 0)
   {
-    $row = mysqli_fetch_assoc($result);
+    $row = mysqli_fetch_assoc($mysql_result);
     $_SESSION ['username'] = $row ['username'];
     header("Location: index.php"); 
-    
-    if ($result->execute()) 
-    {
-      header("Location: http://localhost/storytime/registro.php");
-    }
   }
   else
   {
