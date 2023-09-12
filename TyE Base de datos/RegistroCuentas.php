@@ -75,6 +75,11 @@ if(isset($_POST["submit"]))
   {
     echo "<script>alert('La contraseña o el nombre de usuario son incorrectos')</scripts>";
   }
-}
 
+  if ($result->execute()) 
+  {
+    header("Location: http://localhost/storytime/registro.php");
+      exit();
+  }
+}
 ?>
