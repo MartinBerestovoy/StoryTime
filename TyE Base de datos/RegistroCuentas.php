@@ -19,12 +19,12 @@ if(isset($_POST["submit"]))
 
   if($password == $cpassword)
   {
-    $sql = "SELECT * FROM ID WHERE USERNAME = '$username'"; //XQ SOLICITA EL ID DEL USUARIO CONDO TODAVIA NO SE REGISTRO. SERA EL ERROR?!?!?!?!
+    $sql = "SELECT * FROM ID WHERE USERNAME = '$username'"; 
     $result = mysqli_query($conn, $sql);
 
     if(!$result->num_rows > 0 )
     {
-      $sql = "INSERT INTO proyecto2023-emma (username,password) VALUE ('$username','$password')";
+      $sql = "INSERT INTO proyecto2023-emma (username,password) VALUE (?, ?)";
       $result = mysqli_query($conn, $sql);
 
       if($result)
@@ -51,14 +51,6 @@ if(isset($_POST["submit"]))
   }
 }
 
-?>
-
-<?php
-
-include "confide.php";
-session_start();
-error_reporting(0);
-
 if(isset($_SESSION["username"]));
 {        
   header("Location: index.php");
@@ -81,13 +73,6 @@ if(isset($_POST["submit"]))
   {
     echo "<script>alert('La contraseña o el nombre de usuario son incorrectos')</scripts>";
   }
-  if ($stmt->execute()) {
-    header("Location: http://localhost/storytime/registro.php");
-      exit()
-
-
 }
-
-
 
 ?>
