@@ -69,17 +69,19 @@ if(isset($_POST["submit"]))
   {
     $row = mysqli_fetch_assoc($result);
     $_SESSION ['username'] = $row ['username'];
-    header("Location: index.php");
+    header("Location: index.php"); 
+    
+    if ($result->execute()) 
+    {
+      header("Location: http://localhost/storytime/registro.php");
+        exit();
+    }
   }
   else
   {
     echo "<script>alert('La contraseña o el nombre de usuario son incorrectos')</scripts>";
   }
 
-  if ($result->execute()) 
-  {
-    header("Location: http://localhost/storytime/registro.php");
-      exit();
-  }
+ 
 }
 ?>
