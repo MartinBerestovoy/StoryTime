@@ -22,7 +22,7 @@ if(isset($_POST["submit"]))
     $sql = "SELECT * FROM ID WHERE USERNAME = '$username'"; 
     $result = $conn->query($sql);
 
-    if(!$result->num_rows = 0 )
+    if(!$result->num_rows > 0 )
     {
       $sql = "INSERT INTO `proyecto2023-emma` (username,password) VALUE (?, ?)"; //las comillas (`proyecto2023-emma`) no se si esten bien, DEJENLAS
       $result = $conn->prepare($sql);
@@ -67,7 +67,7 @@ if(isset($_POST["submit"]))
   $result->bind_param("ss", $username, $password);
   $result->execute();
 
-  if($result -> num_rows = 0)
+  if($result -> num_rows > 0)
   {
     $row = mysqli_fetch_assoc($mysqli_result);
     $_SESSION ['username'] = $row ['username'];
