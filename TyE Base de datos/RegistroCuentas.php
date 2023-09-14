@@ -24,7 +24,7 @@ if(isset($_POST["submit"]))
 
     if(!$result->num_rows > 0 )
     {
-      $sql = "INSERT INTO proyecto2023-emma (username,password) VALUE (?, ?)";
+      $sql = "INSERT INTO `proyecto2023-emma` (username,password) VALUE (?, ?)"; //las comillas (`proyecto2023-emma`) no se si esten bien, DEJENLAS
       $result = $conn->prepare($sql);
       $result->bind_param("ss", $username, $password);
       $result->execute();
@@ -53,7 +53,7 @@ if(isset($_POST["submit"]))
   }
 }
 
-if(isset($_SESSION["username"]));
+if(isset($_SESSION["username"]))
 {        
   header("Location: index.php");
 }
@@ -69,7 +69,7 @@ if(isset($_POST["submit"]))
 
   if($result -> num_rows > 0)
   {
-    $row = mysqli_fetch_assoc($result);
+    $row = mysqli_fetch_assoc($mysqli_result);
     $_SESSION ['username'] = $row ['username'];
     header("Location: index.php"); 
   }
@@ -77,7 +77,6 @@ if(isset($_POST["submit"]))
   {
     echo "<script>alert('La contraseña o el nombre de usuario son incorrectos')</script>";
   }
-
- 
 }
+
 ?>
