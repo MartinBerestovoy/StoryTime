@@ -25,11 +25,11 @@ if(isset($_POST["submit"]))
     if(!$result->num_rows > 0 )
     {
       $sql = "INSERT INTO `proyecto2023-emma` (username,password) VALUE (?, ?)"; //las comillas (`proyecto2023-emma`) no se si esten bien, DEJENLAS
-      $result = $conn->prepare($sql);
-      $result->bind_param("ss", $username, $password);
-      $result->execute();
+      $result2 = $conn->prepare($sql);
+      $result2->bind_param("ss", $username, $password);
+      $result2->execute();
 
-      if($result)
+      if($result2)
       {
         echo "<script>alert('Usuario registrado con exito')</script>";
         $username = "";
@@ -63,13 +63,13 @@ if(isset($_POST["submit"]))
   $_password = md5($_POST["password"]);
 
   $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
-  $result = $conn->prepare($sql);
-  $result->bind_param("ss", $username, $password);
-  $result->execute();
+  $statement = $conn->prepare($sql);
+  $statement->bind_param("ss", $username, $password);
+  $result = $statement->execute();
 
   if($result -> num_rows > 0)
   {
-    $row = mysqli_fetch_assoc($mysqli_result);
+    $row = mysqli_fetch($result);
     $_SESSION ['username'] = $row ['username'];
     header("Location: index.php"); 
   }
@@ -80,3 +80,5 @@ if(isset($_POST["submit"]))
 }
 
 ?>
+
+//ULTIMOS CAMBIOS: result --> result2 || mysqli_fetch_assoc --> mysqli_fetch  
