@@ -26,7 +26,6 @@ for ($i = 0; $i <= count($lugares); $i++) {
 
 $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
 
-
 ?>
 
 
@@ -51,13 +50,7 @@ $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConc
                          
                     }
                });
-
-               // Handler para enviar la pregunta al hacer clic en el botón
-               $('#submit-button').click(function() {
-                    var pregunta = $('#input-question').val();
-                    realizarPregunta(pregunta);
-                    
-               });
+               
           });
 
           function realizarPregunta(pregunta) {
