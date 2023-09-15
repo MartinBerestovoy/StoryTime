@@ -37,5 +37,3 @@ if ($err) {
     file_put_contents($audioFilePath, $response);
 }
 ?>
-
-<a href="audio.mp3">Click here to listen to the audio</a>
