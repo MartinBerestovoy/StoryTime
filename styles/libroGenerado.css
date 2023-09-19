@@ -1,0 +1,12 @@
+*{
+    font-family: 'Verdana', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Pongo color de fondo y margen al body */
+body{
+    background-color:  #e8d5cf;
+    margin: 30px;
+}
