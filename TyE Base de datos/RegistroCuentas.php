@@ -81,4 +81,32 @@ if(isset($_POST["submit"]))
 
 ?>
 
-//ULTIMOS CAMBIOS: result --> result2 || mysqli_fetch_assoc --> mysqli_fetch  
+/*
+ULTIMOS CAMBIOS: result --> result2 || mysqli_fetch_assoc -->mysqli_fetch  
+REVIAR COMILLAS DE ('proyecto2023-emma')
+
+CODIGO CORRECTO? QUE VIGI LO REVISE
+if(isset($_POST["submit"]))
+
+{
+  $_password = md5($_POST["password"]);
+
+  $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
+  $statement = $conn->prepare($sql);
+  $statement->bind_param("ss", $username, $password);
+  $result = $statement -> execute();
+
+  if($result -> num_rows > 0)
+  {
+    $row = result -> fetch_assoc;
+    $_SESSION['username'] = $row['username'];
+    header("Location: index.php"); 
+    exit();
+  }
+  else
+  {
+    echo "<script>alert('La contraseña o el nombre de usuario son incorrectos')</script>";
+  }
+}
+
+*/
