@@ -1,4 +1,7 @@
 <?php
+
+//programacion del registro. si el nombre esta en la base de datos no permite registrarse con ese nombre
+
 include "conexionServer.php"; 
 error_reporting(0);
 session_start();
@@ -6,44 +9,42 @@ session_start();
 if(isset($_SESSION["username"]))
 {
   header("Location: panel.php");
-  exit(); // Agregamos exit() para asegurarnos de que se detenga la ejecución después de la redirección.
 }
 
 if(isset($_POST["submit"]))
 {
   $username = $_POST["username"];
-  $password = md5($_POST["password"]);
-  $cpassword = md5($_POST["cpassword"]);
+  $password = md5 ($_POST["password"]);
+  $cpassword = md5 ($_POST["cpassword"]);
 
   if($password == $cpassword)
   {
-    // Consulta SQL para verificar si el nombre de usuario ya existe
-    $sql = "SELECT * FROM proyecto2023_emma WHERE username = ?";
-    $statement = $conn->prepare($sql);
-    $statement->bind_param("s", $username);
-    $statement->execute();
-    $result = $statement->get_result();
+    $sql = "SELECT * FROM ID WHERE USERNAME = '$username'"; 
+    $result = $conn->query($sql);
 
-    if($result->num_rows == 0)
+    if(!$result->num_rows > 0 )
     {
-      // Consulta SQL para insertar un nuevo usuario
-      $sql = "INSERT INTO proyecto2023_emma (username, password) VALUES (?, ?)";
-      $statement = $conn->prepare($sql);
-      $statement->bind_param("ss", $username, $password);
+      $sql = "INSERT INTO `proyecto2023-emma` (username,password) VALUE (?, ?)"; //las comillas (`proyecto2023-emma`) no se si esten bien, DEJENLAS
+      $result2 = $conn->prepare($sql);
+      $result2->bind_param("ss", $username, $password);
+      $result2->execute();
 
-      if($statement->execute())
+      if($result2)
       {
-        echo "<script>alert('Usuario registrado con éxito')</script>";
+        echo "<script>alert('Usuario registrado con exito')</script>";
         $username = "";
+        $_POST["password"] = "";
+        $_POST["cpassword"] = "";
       }
       else
       {
-        echo "<script>alert('Hubo un error al registrar el usuario')</script>";
+        echo "<script>alert('Hay un error')</script>";
+
       }
     }
     else
     {
-      echo "<script>alert('El nombre de usuario ya está en uso')</script>";
+      echo "<script>alert('El nombre de usuario ya esta en uso')</script>";
     }
   }
   else
@@ -52,38 +53,33 @@ if(isset($_POST["submit"]))
   }
 }
 
+if(isset($_SESSION["username"]))
+{        
+  header("Location: index.php");
+}
+
 if(isset($_POST["submit"]))
 {
-  $username = $_POST["username"];
-  $password = md5($_POST["password"]);
+  $_password = md5($_POST["password"]);
 
-  // Consulta SQL para verificar el inicio de sesión
-  $sql = "SELECT * FROM proyecto2023_emma WHERE username = ? AND password = ?";
+  $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
   $statement = $conn->prepare($sql);
   $statement->bind_param("ss", $username, $password);
-  $statement->execute();
-  $result = $statement->get_result();
+  $result = $statement->execute();
 
-  if($result->num_rows > 0)
+  if($result -> num_rows > 0)
   {
-    $row = $result->fetch_assoc();
-    $_SESSION['username'] = $row['username'];
+    $row = mysqli_fetch($result);
+    $_SESSION ['username'] = $row ['username'];
     header("Location: index.php"); 
-    exit(); // Agregamos exit() después de la redirección.
   }
   else
   {
     echo "<script>alert('La contraseña o el nombre de usuario son incorrectos')</script>";
   }
 }
+
 ?>
-
-
-
-
-
-
-
 
 /*
 ULTIMOS CAMBIOS: result --> result2 || mysqli_fetch_assoc -->mysqli_fetch  
