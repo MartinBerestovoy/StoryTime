@@ -24,7 +24,7 @@ if(isset($_POST["submit"]))
 
     if(!$result->num_rows > 0 )
     {
-      $sql = "INSERT INTO `proyecto2023-emma` (username,password) VALUE (?, ?)"; //las comillas (`proyecto2023-emma`) no se si esten bien, DEJENLAS
+      $sql = "INSERT INTO 'usuarios' (username,password) VALUE (?, ?)"; //las comillas (`proyecto2023-emma`) no se si esten bien, DEJENLAS
       $result2 = $conn->prepare($sql);
       $result2->bind_param("ss", $username, $password);
       $result2->execute();
