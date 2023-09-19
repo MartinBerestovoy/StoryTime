@@ -71,7 +71,7 @@ if(isset($_POST["submit"]))
   if($result -> num_rows > 0)
   {
     $row = $result -> fetch_assoc();
-    $_SESSION ['username'] = $row ['username'];
+    $_SESSION['username'] = $row['username'];
     header("Location: index.php"); 
   }
   else
@@ -83,8 +83,8 @@ if(isset($_POST["submit"]))
 ?>
 
 /*
-ULTIMOS CAMBIOS: result --> result2 || mysqli_fetch_assoc -->mysqli_fetch  
-REVIAR COMILLAS DE ('proyecto2023-emma')
+ULTIMOS CAMBIOS: result -> result2 || mysqli_fetch_assoc -> mysqli_fetch  || fetch_asscoc($result) -> $result -> fetch_assoc()
+REVISAR COMILLAS DE ('proyecto2023-emma')
 
 CODIGO CORRECTO? QUE VIGI LO REVISE
 if(isset($_POST["submit"]))
