@@ -65,11 +65,12 @@ if(isset($_POST["submit"]))
   $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
   $statement = $conn->prepare($sql);
   $statement->bind_param("ss", $username, $password);
-  $result = $statement->execute();
+  $statement->execute();
+  $result = $statement -> get_result();
 
   if($result -> num_rows > 0)
   {
-    $row = mysqli_fetch($result);
+    $row = $result -> fetch_assoc();
     $_SESSION ['username'] = $row ['username'];
     header("Location: index.php"); 
   }
