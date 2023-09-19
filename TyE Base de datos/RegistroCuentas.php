@@ -65,12 +65,13 @@ if(isset($_POST["submit"]))
   $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
   $statement = $conn->prepare($sql);
   $statement->bind_param("ss", $username, $password);
-  $result = $statement->execute();
+  $result = $statement;
+  $result -> execute();
 
   if($result -> num_rows > 0)
   {
-    $row = mysqli_fetch($result);
-    $_SESSION ['username'] = $row ['username'];
+    $row = mysqli_stmt_get_result($result);
+    $_SESSION ['username'] = $column ['username'];
     header("Location: index.php"); 
   }
   else
@@ -82,7 +83,7 @@ if(isset($_POST["submit"]))
 ?>
 
 /*
-ULTIMOS CAMBIOS: result --> result2 || mysqli_fetch_assoc -->mysqli_fetch  
+ULTIMOS CAMBIOS: result --> result2 || mysqli_fetch_assoc --> mysqli_fetch  
 REVIAR COMILLAS DE ('proyecto2023-emma')
 
 CODIGO CORRECTO? QUE VIGI LO REVISE
