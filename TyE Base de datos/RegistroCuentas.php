@@ -3,7 +3,7 @@ include "conexionServer.php";
 error_reporting(0);
 session_start();
 
-if(isset($_SESSION["username"]))
+if(isset($_SESSION["nombre de usuario"]))
 {
   header("Location: panel.php");
   exit(); // Agregamos exit() para asegurarnos de que se detenga la ejecución después de la redirección.
@@ -11,14 +11,14 @@ if(isset($_SESSION["username"]))
 
 if(isset($_POST["submit"]))
 {
-  $username = $_POST["username"];
-  $password = md5($_POST["password"]);
-  $cpassword = md5($_POST["cpassword"]);
+  $username = $_POST["nombre de usuario"];
+  $password = md5($_POST["contrasenia"]);
+  $cpassword = md5($_POST["ccontrasenia"]);
 
   if($password == $cpassword)
   {
     // Consulta SQL para verificar si el nombre de usuario ya existe
-    $sql = "SELECT * FROM proyecto2023_emma WHERE username = ?";
+    $sql = "SELECT * FROM proyecto2023_emma WHERE nombre de usuario = ?";
     $statement = $conn->prepare($sql);
     $statement->bind_param("s", $username);
     $statement->execute();
@@ -27,7 +27,7 @@ if(isset($_POST["submit"]))
     if($result->num_rows == 0)
     {
       // Consulta SQL para insertar un nuevo usuario
-      $sql = "INSERT INTO proyecto2023_emma (username, password) VALUES (?, ?)";
+      $sql = "INSERT INTO proyecto2023_emma (nombre de usuario, contrasenia) VALUES (?, ?)";
       $statement = $conn->prepare($sql);
       $statement->bind_param("ss", $username, $password);
 
@@ -54,11 +54,11 @@ if(isset($_POST["submit"]))
 
 if(isset($_POST["submit"]))
 {
-  $username = $_POST["username"];
-  $password = md5($_POST["password"]);
+  $username = $_POST["nombre de usuario"];
+  $password = md5($_POST["contrasenia"]);
 
   // Consulta SQL para verificar el inicio de sesión
-  $sql = "SELECT * FROM proyecto2023_emma WHERE username = ? AND password = ?";
+  $sql = "SELECT * FROM proyecto2023_emma WHERE nombre de usuario = ? AND contrasenia = ?";
   $statement = $conn->prepare($sql);
   $statement->bind_param("ss", $username, $password);
   $statement->execute();
@@ -67,7 +67,7 @@ if(isset($_POST["submit"]))
   if($result->num_rows > 0)
   {
     $row = $result->fetch_assoc();
-    $_SESSION['username'] = $row['username'];
+    $_SESSION['nombre de usuario'] = $row['nombre de usuario'];
     header("Location: index.php"); 
     exit(); // Agregamos exit() después de la redirección.
   }
@@ -77,7 +77,7 @@ if(isset($_POST["submit"]))
   }
 }
 ?>
-
+Este código corrige los errores identificados y organiza de manera más eficiente las consultas SQL y la lógica de manejo de sesiones y formularios. Asegúrate de que la tabla en la base de datos se llame "proyecto2023_emma" y que las columnas sean "username" y "password", y que estés usando un hash seguro para almacenar contraseñas en la base de datos.
 
 
 
