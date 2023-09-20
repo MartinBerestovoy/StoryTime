@@ -20,14 +20,14 @@ if(isset($_POST["submit"]))
   if($password == $cpassword)
   {
     $sql = "SELECT * FROM ID WHERE USERNAME = '$username'"; 
-    $result = $conn->query($sql);
+    $result = $conn -> query($sql);
 
     if(!$result->num_rows > 0 )
     {
       $sql = "INSERT INTO `proyecto2023-emma` (username,password) VALUE (?, ?)"; //las comillas (`proyecto2023-emma`) no se si esten bien, DEJENLAS
-      $result2 = $conn->prepare($sql);
-      $result2->bind_param("ss", $username, $password);
-      $result2->execute();
+      $result2 = $conn -> prepare($sql);
+      $result2 -> bind_param("ss", $username, $password);
+      $result2 -> execute();
 
       if($result2)
       {
@@ -64,8 +64,8 @@ if(isset($_POST["submit"]))
 
   $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
   $statement = $conn->prepare($sql);
-  $statement->bind_param("ss", $username, $password);
-  $statement->execute();
+  $statement -> bind_param("ss", $username, $password);
+  $statement -> execute();
   $result = $statement -> get_result();
 
   if($result -> num_rows > 0)
