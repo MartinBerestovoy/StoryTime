@@ -1,4 +1,4 @@
-<?php
+<?php  
 
 //programacion del registro. si el nombre esta en la base de datos no permite registrarse con ese nombre
 
@@ -20,14 +20,14 @@ if(isset($_POST["submit"]))
   if($password == $cpassword)
   {
     $sql = "SELECT * FROM ID WHERE USERNAME = '$username'"; 
-    $result = $conn->query($sql);
+    $result = $conn -> query($sql);
 
     if(!$result->num_rows > 0 )
     {
       $sql = "INSERT INTO `proyecto2023-emma` (username,password) VALUE (?, ?)"; //las comillas (`proyecto2023-emma`) no se si esten bien, DEJENLAS
-      $result2 = $conn->prepare($sql);
-      $result2->bind_param("ss", $username, $password);
-      $result2->execute();
+      $result2 = $conn -> prepare($sql);
+      $result2 -> bind_param("ss", $username, $password);
+      $result2 -> execute();
 
       if($result2)
       {
@@ -64,13 +64,14 @@ if(isset($_POST["submit"]))
 
   $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
   $statement = $conn->prepare($sql);
-  $statement->bind_param("ss", $username, $password);
-  $result = $statement->execute();
+  $statement -> bind_param("ss", $username, $password);
+  $statement -> execute();
+  $result = $statement -> get_result();
 
   if($result -> num_rows > 0)
   {
-    $row = mysqli_fetch($result);
-    $_SESSION ['username'] = $row ['username'];
+    $row = $result -> fetch_assoc();
+    $_SESSION['username'] = $row['username'];
     header("Location: index.php"); 
   }
   else
@@ -82,8 +83,8 @@ if(isset($_POST["submit"]))
 ?>
 
 /*
-ULTIMOS CAMBIOS: result --> result2 || mysqli_fetch_assoc -->mysqli_fetch  
-REVIAR COMILLAS DE ('proyecto2023-emma')
+ULTIMOS CAMBIOS: result -> result2 || mysqli_fetch_assoc -> mysqli_fetch  || fetch_asscoc($result) -> $result -> fetch_assoc()
+REVISAR COMILLAS DE ('proyecto2023-emma')
 
 CODIGO CORRECTO? QUE VIGI LO REVISE
 if(isset($_POST["submit"]))
