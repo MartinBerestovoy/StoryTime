@@ -63,7 +63,7 @@ if(isset($_POST["submit"]))
   $_password = md5($_POST["password"]);
 
   $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
-  $statement = $conn->prepare($sql);
+  $statement = $conn -> prepare($sql);
   $statement -> bind_param("ss", $username, $password);
   $statement -> execute();
   $result = $statement -> get_result();
