@@ -27,6 +27,7 @@ for ($i = 0; $i <= count($lugares); $i++) {
 
 
 $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
+$titulo_prompt = "Genera un titulo para el cuento"
 
 ?>
 
