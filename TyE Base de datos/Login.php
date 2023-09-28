@@ -23,7 +23,8 @@ if(isset($_POST["submit"]))
   {
     $row = $result -> fetch_assoc();
     $_SESSION['username'] = $row['username'];
-    header("Location: index.php"); 
+    header("Location: biblioteca.php"); 
+    exit();
   }
   else
   {
