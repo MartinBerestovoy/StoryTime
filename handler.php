@@ -3,6 +3,7 @@
 //le agregue '[]' a la referencia de los arrays (despues del '$_POST')
 
 var_dump($_POST);
+//FALTA CONEXION???
 
 $tematicas = $_POST['tematicas[]'];
 $tematicasConcatenadas = "";
@@ -32,7 +33,7 @@ $titulo_prompt = "Genera un titulo para el cuento"
 ?>
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -73,4 +74,4 @@ $titulo_prompt = "Genera un titulo para el cuento"
      </script>
 </body>
 
-</html>
+</html> -->

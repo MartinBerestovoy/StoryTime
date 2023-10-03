@@ -86,6 +86,21 @@
                     $('#input-question').val('');
                     chatContainer.scrollTop(chatContainer[0].scrollHeight);
                 }
+                
+            });
+            pedido_de_titulo = "Haceme un titulo para este cuento:" + respuesta
+
+            $.ajax({
+                type: "POST",
+                url: "textApi.php",
+                data: {
+                    mensaje: pedido_de_titulo
+                },
+                success: function(titulo) {
+                    $("#barra").hide();
+                    alert("titulo:" + titulo);
+                }
+                
             });
         }
     </script>
