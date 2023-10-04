@@ -172,7 +172,7 @@
       </section>
       <br>
       <br>
-      <button type="submit"><a href="handler.php" class="button">CREAR HISTORIA</a> </button>
+      <button type="submit" class="button">CREAR HISTORIA</button>
     </form>
 
 </body>
