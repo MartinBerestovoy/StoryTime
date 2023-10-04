@@ -38,7 +38,7 @@ $decoded_response = json_decode($response, true);
 if (isset($decoded_response['choices'][0]['message']['content'])) {
     $answer = $decoded_response['choices'][0]['message']['content'];
 } else {
-    $answer = "Sorry, I don't understand";   
+    $answer = "Lorem ipsum dolor sit amet consectetur adipiscing, elit ante viverra nostra ornare. Placerat nisl bibendum sociosqu pulvinar euismod velit neque mattis nunc, luctus dui mus tristique nibh nulla nisi eget interdum nec, tempor class suspendisse dis maecenas quis rhoncus libero. Dui ultricies id aliquam elementum venenatis taciti sed tempus placerat sem, per integer lectus fusce vitae nascetur pharetra risus odio, curabitur natoque eu vestibulum interdum montes varius massa urna. Velit vel inceptos a luctus hendrerit rhoncus gravida ullamcorper libero, nibh malesuada suspendisse et penatibus aliquam tempor.";   
 }
 
 curl_close($ch);

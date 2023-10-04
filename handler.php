@@ -3,32 +3,61 @@
 //le agregue '[]' a la referencia de los arrays (despues del '$_POST')
 
 var_dump($_POST);
-//FALTA CONEXION???
+//FALTA
 
-$tematicas = $_POST['tematicas[]'];
+$tematicas = $_POST['tematicas'];
 $tematicasConcatenadas = "";
 
-for ($i = 0; $i <= count($tematicas); $i++) {
+for ($i = 0; $i < count($tematicas); $i++) {
      $tematicasConcatenadas .= ", " . $tematicas[$i];
 }
 
-$personajes = $_POST['personajes[]'];
+$personajes = $_POST['personajes'];
 $personajesConcatenados = "";
 
-for ($i = 0; $i <= count($personaje); $i++) {
+for ($i = 0; $i < count($personajes); $i++) {
      $personajesConcatenados .= ", " . $personajes[$i];
 }
 
-$lugares = $_POST['lugares[]'];
+$lugares = $_POST['lugares'];
 $lugaresConcatenados = "";
 
-for ($i = 0; $i <= count($lugares); $i++) {
+for ($i = 0; $i < count($lugares); $i++) {
      $lugaresConcatenados .= ", " . $lugares[$i];
 }
 
+//POSIBLES CODIGOS --> CHAT GPT
+
+//OPCION 1:
+// if(isset($_POST['tematicas']) && is_array($_POST['tematicas'])) {
+//      $tematicas = $_POST['tematicas'];
+//      $tematicasConcatenadas = implode(", ", $tematicas);
+//  }
+//  if(isset($_POST['personajes']) && is_array($_POST['personajes'])) {
+//      $personajes = $_POST['personajes'];
+//      $personajesConcatenados = implode(", ", $personajes);
+//  }
+//  if(isset($_POST['lugares']) && is_array($_POST['lugares'])) {
+//      $lugares = $_POST['lugares'];
+//      $lugaresConcatenados = implode(", ", $lugares);
+//  }
+
+//OPCION 2:
+//  $tematicas = $_POST['tematicas'];
+//  $tematicasConcatenadas = implode(', ', $tematicas);
+//  $personajes = $_POST['personajes'];
+//  $personajesConcatenados = implode(', ', $personajes);
+//  $lugares = $_POST['lugares'];
+//  $lugaresConcatenados = implode(', ', $lugares);
+ 
+//OPCION 3:
+//  $tematicasConcatenadas = isset($_POST['tematicas']) ? implode(', ', $_POST['tematicas']) : '';
+//  $personajesConcatenados = isset($_POST['personajes']) ? implode(', ', $_POST['personajes']) : '';
+//  $lugaresConcatenados = isset($_POST['lugares']) ? implode(', ', $_POST['lugares']) : '';
+
 
 $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
-$titulo_prompt = "Genera un titulo para el cuento"
+$titulo_prompt = "Genera un titulo para el cuento";
 
 ?>
 
