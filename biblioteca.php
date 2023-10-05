@@ -15,25 +15,33 @@
   <br>
   
   <section class="libros">
-          <div class="libro">
-            <label class="contenidoLibros">
-            </label>
-          </div>
 
-          <div class="libro">
-            <label class="contenidoLibros">
-            </label>
-          </div>
-          <div class="libro">
-            <label class="contenidoLibros">
-          </label>
-          </div>
-          <br>
-        </section>
-      </section>
-      <br>
+  <a id="mas" href="crearLibro.php"> 
+  <svg width="35" height="64" viewBox="0 0 35 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.9091 43.6136V21.1136H17.7273V43.6136H13.9091ZM4.56818 34.2727V30.4545H27.0682V34.2727H4.56818Z" fill="black"/>
+  </svg>
 
-  <button><a href="crearLibro.php"> + </a></button>
+  </a>
+
+
+    <div class="libro">
+      <label class="contenidoLibros">
+      </label>
+    </div>
+
+    <div class="libro">
+      <label class="contenidoLibros">
+      </label>
+    </div>
+
+    <div class="libro">
+      <label class="contenidoLibros">
+      </label>
+    </div>
+    <br> 
+  </section>
+  
+  <br>
 
 </body>
 </html>

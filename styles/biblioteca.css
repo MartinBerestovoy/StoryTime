@@ -32,6 +32,12 @@ h1{
     text-align: center;  /* Centra horizontalmente */
 }
 
+svg{
+  width: 200px;
+  height: auto;
+  color: black;
+}
+
 section.libros{
     display: flex;
     align-items: center;
@@ -88,5 +94,9 @@ div.libros label {
 
 
 div.libro:hover{
+    transform: scale(1.08);
+}
+
+a#mas:hover{
     transform: scale(1.08);
 }
