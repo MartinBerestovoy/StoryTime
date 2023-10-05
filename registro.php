@@ -31,7 +31,7 @@
       <div class="username">
         <label id="nombre"> NOMBRE DE USUARIO</label>
         <div class="input">
-          <input type="text" name="username" required>
+          <input type="text" name="username" placeholder="INGRESE EL NOMBRE DE USUARIO" required>
         </div>
       </div>
 
