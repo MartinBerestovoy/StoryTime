@@ -1,32 +1,63 @@
 <?php
 
-//le agregue '[]' a la referencia de los arrays (despues del '$_POST')
-
-var_dump($_POST);
-//FALTA
-
 $tematicas = $_POST['tematicas'];
 $tematicasConcatenadas = "";
 
-for ($i = 0; $i < count($tematicas); $i++) {
-     $tematicasConcatenadas .= ", " . $tematicas[$i];
+for ($i = 0; $i < count($tematicas); $i++) 
+{
+     if($i == 0)
+     {
+          $tematicasConcatenadas = $tematicas[0];
+     }
+     else if($i == count($tematicas))
+     {
+          $tematicasConcatenadas .= "y " . end($tematicas);
+     }
+     else
+     {
+          $tematicasConcatenadas .= ", " . $tematicas[$i];
+     }
 }
 
 $personajes = $_POST['personajes'];
 $personajesConcatenados = "";
 
-for ($i = 0; $i < count($personajes); $i++) {
-     $personajesConcatenados .= ", " . $personajes[$i];
+for ($i = 0; $i < count($personajes); $i++) 
+{
+     if($i == 0)
+     {
+          $personajesConcatenados = $personajes[0];
+     }
+     else if($i == count($personajes))
+     {
+          $personajesConcatenados .= "y " . end($personajes);
+     }
+     else
+     {
+         $personajesConcatenados .= ", " . $personajes[$i]; 
+     }
 }
 
 $lugares = $_POST['lugares'];
 $lugaresConcatenados = "";
 
-for ($i = 0; $i < count($lugares); $i++) {
-     $lugaresConcatenados .= ", " . $lugares[$i];
+for ($i = 0; $i < count($lugares); $i++) 
+{
+     if($i == 0)
+     {
+          $lugaresConcatenados = $lugares[0];
+     }
+     else if($i == count($lugares))
+     {
+          $lugaresConcatenados .= "y " . end($lugares);
+     }
+     else
+     {
+          $lugaresConcatenados .= ", " . $lugares[$i];
+     }
 }
 
-//POSIBLES CODIGOS --> CHAT GPT
+//POSIBLES CODIGOS --> CHAT GPT (((YA FUNCIONA - QUEDAN POR SI ACASO)))
 
 //OPCION 1:
 // if(isset($_POST['tematicas']) && is_array($_POST['tematicas'])) {
@@ -58,6 +89,9 @@ for ($i = 0; $i < count($lugares); $i++) {
 
 $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
 $titulo_prompt = "Genera un titulo para el cuento";
+
+//PARA REVISAR QUE EL PROMPT SE GENERE
+echo ($final_prompt);
 
 ?>
 
