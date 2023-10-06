@@ -33,9 +33,9 @@
     </p>
   </div>
     
-  <input type="file" id="audioInput" accept="audio/*">
-  <button id="processAudio">Procesar Audio</button>
-  <div id="result"></div>
+  <textarea id="storyInput" rows="10" cols="50"></textarea>
+  <button id="convertToAudio">Convertir a Audio</button>
+  <audio id="audioPlayer" controls></audio>
 
    <!-- Enlazar el archivo JavaScript -->
    <script src="libroGenerado.js"></script>
