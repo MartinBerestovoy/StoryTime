@@ -33,7 +33,12 @@
     </p>
   </div>
     
+  <input type="file" id="audioInput" accept="audio/*">
+  <button id="processAudio">Procesar Audio</button>
+  <div id="result"></div>
 
+   <!-- Enlazar el archivo JavaScript -->
+   <script src="libroGenerado.js"></script>
 
 </body>
 </html>
