@@ -32,13 +32,45 @@
     Sed feugiat accumsan libero sit amet pretium. Quisque feugiat porttitor volutpat. Aliquam non auctor purus. Aliquam purus enim, aliquam non tempus ut, pellentesque nec nisl. Integer ultricies arcu quis rhoncus imperdiet. Ut iaculis consectetur felis, id iaculis tortor placerat vitae. Curabitur et tellus ante.
     </p>
   </div>
-    
-  <textarea id="storyInput" rows="10" cols="50"></textarea>
-  <button id="convertToAudio">Convertir a Audio</button>
-  <audio id="audioPlayer" controls></audio>
-
-   <!-- Enlazar el archivo JavaScript -->
-   <script src="libroGenerado.js"></script>
-
 </body>
 </html>
+
+<?php
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+function textToSpeech(string $text, string $lang, string $audioFilePath): void
+{
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+        CURLOPT_URL => "https://text-to-speech-api3.p.rapidapi.com/speak?text=$text&lang=$lang",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_HTTPHEADER => [
+            "X-RapidAPI-Host: text-to-speech-api3.p.rapidapi.com",
+            "X-RapidAPI-Key: $_ENV[audio_api_key]"
+        ],
+    ]);
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+
+    curl_close($curl);
+
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
+        file_put_contents($audioFilePath, $response);
+    }
+}
+
+$text = "Hola, soy tincho.";
+$lang = "es";
+$audioFilePath = 'hello_world_spanish.mp3';
+
+textToSpeech($text, $lang, $audioFilePath);
+
+?>
