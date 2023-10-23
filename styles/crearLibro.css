@@ -129,7 +129,6 @@ section{
 }
 
 button {
-    display: block;
     width: auto;
     padding: 10px;
     background-color: #ffffff;
@@ -149,7 +148,6 @@ button {
 
 button:hover{
    background-color: #896362;
-    
 }
 
 section.form{
