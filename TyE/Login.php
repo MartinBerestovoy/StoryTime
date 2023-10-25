@@ -1,35 +1,38 @@
 <?php
 
 include "conexionServer.php";
-error_reporting(0);
 session_start();
 
 if(isset($_SESSION["username"]))
 {        
-  header("Location: index.php");
+  header("Location: ../bibilioteca.php");
 }
 
-if(isset($_POST["submit"]))
-{
-  $_password = md5($_POST["password"]);
+var_dump($_POST);
+  $username = $_POST["username"];
+  $password = md5($_POST["password"]);
 
-  $sql = "SELECT * FROM ID WHERE USERNAME = ? AND PASSWORD = ?";
+  echo $password;
+
+  $sql = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
   $statement = $conn -> prepare($sql);
   $statement -> bind_param("ss", $username, $password);
   $statement -> execute();
   $result = $statement -> get_result();
 
+  var_dump($result);
+
   if($result -> num_rows > 0)
   {
     $row = $result -> fetch_assoc();
     $_SESSION['username'] = $row['username'];
-    header("Location: index.php"); 
+    header("Location: ../biblioteca.php"); 
     exit();
   }
   else
   {
-    echo "<script>alert('La contraseña o el nombre de usuario son incorrectos')</script>";
+    echo "La contraseña o el nombre de usuario son incorrectos";
   }
-}
+
 
 ?>

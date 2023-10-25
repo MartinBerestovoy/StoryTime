@@ -40,18 +40,18 @@
     </svg> <!-- logo de App-->
     <h1 id="titulo">INICIO DE SESION</h1>
 
-    <form method="post">
+    <form method="post" action="TyE/Login.php">
       <div class="username">
         <label id="nombre"> NOMBRE DE USUARIO</label>
         <div class="input">
-          <input type="text" id="usuario" placeholder="INGRESE EL USUARIO" required>
+          <input type="text" id="usuario" placeholder="INGRESE EL USUARIO" name="username" required>
         </div>
 
       </div>
       <div class="username">
         <label id="label-contrasena"> CONTRASEÑA</label>
         <div class="input"></div>
-          <input type="password" id="contrasena" placeholder="INGRESE LA CONTRASEÑA" required>
+          <input type="password" id="contrasena" placeholder="INGRESE LA CONTRASEÑA" name="password" required>
         </div>
 
       <div class="submitBtn">

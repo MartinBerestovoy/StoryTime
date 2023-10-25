@@ -43,7 +43,7 @@
     </svg> <!-- logo de App-->
     <h1 id="titulo">REGISTRO</h1>
 
-    <form action="TyE Base de datos/RegistroCuentas.php" method="post">
+    <form action="TyE/RegistroCuentas.php" method="post">
       <div class="username">
         <label id="nombre"> NOMBRE DE USUARIO</label>
         <div class="input">

@@ -32,10 +32,11 @@ if ($password == $cpassword) {
 
     if ($result2) {
       var_dump($result2);
-      echo "<script>alert('Usuario registrado con exito')</script>";
+      echo "Usuario registrado con exito";
       $username = "";
       $_POST["password"] = "";
       $_POST["cpassword"] = "";
+      header("Location: ../index.html");
     } else {
       echo "<script>alert('Hay un error')</script>";
     }
