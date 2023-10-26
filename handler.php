@@ -91,8 +91,16 @@ $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConc
 $titulo_prompt = "Genera un titulo para el cuento";
 
 //PARA REVISAR QUE EL PROMPT SE GENERE
-echo ($final_prompt);
-
+$.ajax({
+     type: "POST",
+     url: "textApi.php",
+     data: {
+         mensaje: $final_prompt
+     },
+     success: function(answer) {
+         console.log(answer); // muestra por consola el texto q devuelve
+     }
+});
 ?>
 
 
