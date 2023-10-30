@@ -10,8 +10,14 @@
 <body>
   
   <nav class="navVolverAtras" id="contenedorBoton">
-    <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
-    </a>
+    <div class="botonVolver">
+      <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver"></a>
+    </div>
+
+    <div id="iconoCuenta" class="icono-oculto">
+      <a><img src="imgProyecto/Group 1.svg" alt="Icono de cuenta"></a>
+    </div>
+
   </nav>
 
   <script> //script del nav
