@@ -21,7 +21,7 @@
   </script>
 
   <div class="contenedor">
-  <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo">
+  <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo">  <!--Logo de App-->
   </div>
 
   <div class="h1">
