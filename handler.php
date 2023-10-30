@@ -91,16 +91,35 @@ $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConc
 $titulo_prompt = "Genera un titulo para el cuento";
 
 //PARA REVISAR QUE EL PROMPT SE GENERE
-$.ajax({
-     type: "POST",
-     url: "textApi.php",
-     data: {
-         mensaje: $final_prompt
-     },
-     success: function(answer) {
-         console.log(answer); // muestra por consola el texto q devuelve
-     }
-});
+if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+{
+    if (isset($_POST['mensaje'])) 
+    {
+        $mensaje = $_POST['mensaje'];        
+        $respuesta = "Respuesta de textApi.php: " . $mensaje;
+        echo $respuesta;
+    } 
+    else 
+    {
+        http_response_code(400); // Responde con un código de error 400 (Bad Request)
+        echo "El campo 'mensaje' no se encontró en la solicitud.";
+    }
+} else {
+    http_response_code(405); // Responde con un código de error 405 (Method Not Allowed)
+    echo "Método no permitido. Se esperaba una solicitud POST.";
+}
+
+// $.ajax({
+//      type: "POST",
+//      url: "textApi.php",
+//      data: {
+//          mensaje: $final_prompt
+//      },
+//      success: function(answer) {
+//          console.log(answer); // muestra por consola el texto q devuelve
+//      }
+// });
+
 ?>
 
 
