@@ -53,10 +53,10 @@ section.libros{
 
 }
 
-/* modifico los div clase pictograma dentro del form */
+/* modifico los div clase libro dentro del form */
 div.libro{
-    min-height: 500px; /* Establece la altura mínima */
-    min-width: 450px; /* Establece el ancho mínimo */
+    min-height: 400px; /* Establece la altura mínima */
+    min-width: 350px; /* Establece el ancho mínimo */
     height: auto; /* Cambia de px a auto para que se ajuste automáticamente al contenido */
     width: 50%; /* Utiliza un porcentaje en lugar de px para el ancho */
     max-width: 280px; /* Establece un ancho máximo para evitar que se expandan demasiado */
