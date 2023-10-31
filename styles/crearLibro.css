@@ -33,17 +33,24 @@ body{
    border-radius: 50%;
  }
 
- .icono-oculto {
-    height: 55px ;
+ img.iconoCuenta{
+    height: 75px ;
     width: auto;
-    display: djdnd; /* poner display:none */
 }
 
-#iconoCuenta {
+.icono-oculto {
+    display: none;
+}
+
+div#iconoCuenta {
     position: absolute;
     top: 10px;
-    left: 1250px;
+    left: 1375px;
 }
+
+div.icono-oculto:hover{
+    transform: scale(1.08);
+  }
 
  /* centra la imagen del logo y establece un margen debajo de ella */
  img.logo {

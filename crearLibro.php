@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +15,17 @@
       <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver"></a>
     </div>
 
-    <div id="iconoCuenta" class="icono-oculto">
-      <a><img src="imgProyecto/Group 1.svg" alt="Icono de cuenta"></a>
-    </div>
+    <?php 
+    
+    if (isset($_SESSION["username"])) {
+      echo '<div id="iconoCuenta" class="icono-oculto">
+        <a href="infoCuenta.php"><img src="imgProyecto/Group 9.svg" alt="Icono de cuenta" class="iconoCuenta"></a>
+      </div>';
+    }
+    
+    else{ echo '<div id="iconoCuenta">';
+    }
+    ?>
 
   </nav>
 
