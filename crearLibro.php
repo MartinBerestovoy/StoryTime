@@ -18,12 +18,9 @@
     <?php 
     
     if (isset($_SESSION["username"])) {
-      echo '<div id="iconoCuenta" class="icono-oculto">
+      echo '<div id="iconoCuenta" >
         <a href="infoCuenta.php"><img src="imgProyecto/Group 9.svg" alt="Icono de cuenta" class="iconoCuenta"></a>
       </div>';
-    }
-    
-    else{ echo '<div id="iconoCuenta">';
     }
     ?>
 
