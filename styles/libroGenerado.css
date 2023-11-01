@@ -17,3 +17,8 @@ p#libro{
     margin-left: 60px;
     margin-right: 60px;
 }
+
+audio {
+    width: 3000px;
+    height: 54px;
+}
