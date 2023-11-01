@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,24 +21,35 @@
         <input type="file" id="cargarFoto" class="file-upload-input">
     </div> 
     </div>
+
     <br>
+    <br>
+    <br>
+
+    <?php
+
+   $userId = $_SESSION['user_id'];
+   
+   $sql = "SELECT username FROM users WHERE id = '$userId'"; // Suponiendo que la tabla se llama 'users' y la columna del nombre de usuario es 'username'.
+   $result = $conn->query($sql);
+   
+   if (isset($_SESSION["username"])) {
+       $row = $result->fetch_assoc();
+       $nombreUsuario = $row['username'];
+   } else {
+       $nombreUsuario = "Usuario no encontrado";
+   }
+   
+   $conn->close();   
+?>
+
     <div class="datos-perfil">
       <div class="username">
         <label>Nombre de usuario:</label>
-        <input type="text" id="nombreUsuario" readonly>
+        <input type="text" id="nombreUsuario" value="<?php echo $nombreUsuario; ?>" readonly> 
       </div>
-      <br>
-      <div class="email"></div>
-        <label>Email:</label>
-        <input type="text" id="email" readonly>
-      </div>
-      <br>
-      <div class="contrasena">
-        <label>Contraseña:</label>
-        <br>
-        <input type="password" id="password" readonly>
-      </div>
-    </div>
+    <br>
+    <br>
     <br>
     <br>
       <button id="desloguear">Desloguearse</button>
