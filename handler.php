@@ -90,78 +90,31 @@ for ($i = 0; $i < count($lugares); $i++)
 $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
 $titulo_prompt = "Genera un titulo para el cuento";
 
-//PARA REVISAR QUE EL PROMPT SE GENERE
-if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+echo $final_prompt;
+
+// URL a la que deseas hacer la solicitud
+$url = 'https://api.openai.com/v1/chat/completions';
+
+// Inicializa una sesión cURL
+$ch = curl_init($url);
+
+// Establece opciones para la sesión cURL
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Hace que cURL devuelva la respuesta en lugar de imprimirla
+
+// Ejecuta la solicitud HTTP GET
+$response = curl_exec($ch);
+
+// Verifica si hubo errores en la solicitud
+if (curl_errno($ch)) 
 {
-    if (isset($_POST['mensaje'])) 
-    {
-        $mensaje = $_POST['mensaje'];        
-        $respuesta = "Respuesta de textApi.php: " . $mensaje;
-        echo $respuesta;
-    } 
-    else 
-    {
-        http_response_code(400); // Responde con un código de error 400 (Bad Request)
-        echo "El campo 'mensaje' no se encontró en la solicitud.";
-    }
-} else {
-    http_response_code(405); // Responde con un código de error 405 (Method Not Allowed)
-    echo "Método no permitido. Se esperaba una solicitud POST.";
+    echo 'Error en la solicitud cURL: ' . curl_error($ch);
 }
 
-// $.ajax({
-//      type: "POST",
-//      url: "textApi.php",
-//      data: {
-//          mensaje: $final_prompt
-//      },
-//      success: function(answer) {
-//          console.log(answer); // muestra por consola el texto q devuelve
-//      }
-// });
+// Cierra la sesión cURL
+curl_close($ch);
+
+// Muestra la respuesta
+echo $response;
+
 
 ?>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <script>
-          $(document).ready(function() {
-               // Handler para enviar la pregunta al hacer Enter en el input
-               $('#input-question').keypress(function(event) {
-                    if (event.keyCode === 13) {
-                         event.preventDefault();
-                         var pregunta = $(this).val();
-                         realizarPregunta(pregunta);
-                         
-                    }
-               });
-               
-          });
-
-          function realizarPregunta(pregunta) {
-               // Realizar la solicitud al servidor PHP
-               $.ajax({
-                    type: "POST",
-                    url: "textApi.php",
-                    data: {
-                         mensaje: final_prompt
-                         //???????
-                    },
-                    success: function(respuesta) {
-                         echo(respuesta);
-                    }
-               });
-          }
-     </script>
-</body>
-
-</html> -->
