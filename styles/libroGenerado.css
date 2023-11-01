@@ -18,7 +18,12 @@ p#libro{
     margin-right: 60px;
 }
 
+div.audio{
+    display: flex;
+}
+
 audio {
     width: 3000px;
     height: 54px;
+    background-color: #e8d5cf;
 }
