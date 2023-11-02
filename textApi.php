@@ -23,7 +23,7 @@ $data = [
 ];
 
 $data['messages'][] = ['role' => 'system', 'content' => $role];
-$data['messages'][] = ['role' => 'user', 'content' => $prompt];
+$data['messages'][] = ['role' => 'user', 'content' => $final_prompt];
 
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 $response = curl_exec($ch);

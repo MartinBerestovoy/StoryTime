@@ -156,7 +156,7 @@
           </div>
           <div class="pictograma">
           <label for="pictogramaPatio">
-            <input id="pictogramaPatio" type="checkbox" class="custom-checkbox" value="aula" name="lugares[]">PATIO
+            <input id="pictogramaPatio" type="checkbox" class="custom-checkbox" value="patio" name="lugares[]">PATIO
             <span class="checkmark"></span>
             <img src="imgProyecto/patio.png" alt="PATIO">
           </label>

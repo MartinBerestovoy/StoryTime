@@ -30,17 +30,15 @@
 
    $userId = $_SESSION['user_id'];
    
-   $sql = "SELECT username FROM users WHERE id = '$userId'"; // Suponiendo que la tabla se llama 'users' y la columna del nombre de usuario es 'username'.
+   $sql = "SELECT username FROM usuarios WHERE id = '$userId'"; // Suponiendo que la tabla se llama 'users' y la columna del nombre de usuario es 'username'.
    $result = $conn->query($sql);
    
-   if (isset($_SESSION["username"])) {
+   if (isset($_SESSION["username"])) 
+   {
        $row = $result->fetch_assoc();
        $nombreUsuario = $row['username'];
-   } else {
-       $nombreUsuario = "Usuario no encontrado";
+  
    }
-   
-   $conn->close();   
 ?>
 
     <div class="datos-perfil">
