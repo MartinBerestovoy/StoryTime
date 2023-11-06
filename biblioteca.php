@@ -25,16 +25,19 @@
 
 
     <div class="libro">
+      <label class="tituloLibro">TITULO DE LIBRO</label>
       <label class="contenidoLibros">
       </label>
     </div>
 
     <div class="libro">
+      <label class="tituloLibro">TITULO DE LIBRO</label>
       <label class="contenidoLibros">
       </label>
     </div>
 
     <div class="libro">
+      <label class="tituloLibro">TITULO DE LIBRO</label>
       <label class="contenidoLibros">
       </label>
     </div>

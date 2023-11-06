@@ -6,6 +6,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="styles/handler.css">
      <title>Document</title>
+     <link rel="stylesheet" href="styles/libroGenerado.css">
 </head>
 <body>
 
@@ -163,11 +164,91 @@ if (isset($decoded_response['choices'][0]['message']['content'])) {
 
 curl_close($ch);
 
-echo $answer;
-
 ?>
 
+<nav class="navVolverAtras" id="contenedorBoton">
+    <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
+    </a>
 
+    <?php 
+    if (isset($_SESSION["username"])) {
+      echo '<div id="iconoCuenta">
+        <a href="infoCuenta.php"><img src="imgProyecto/Group 9.svg" alt="Icono de cuenta" class="iconoCuenta"></a>
+      </div>';
+    }
+    ?>
+
+  </nav>
+
+  <script>
+    //script del nav
+    function volverAtras() {
+      window.history.back();
+    }
+  </script>
+
+  <div>
+    <p id="libro">
+    <?php echo $answer; ?>
+    </p>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="audio">
+    <?php
+
+    $_ENV = parse_ini_file(".env");
+
+    function textToSpeech(string $text, string $lang, string $audioFilePath, $curl): void
+    {
+      curl_setopt_array($curl, [
+        CURLOPT_URL => "https://text-to-speech-api3.p.rapidapi.com/speak?text=$text&lang=$lang",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_HTTPHEADER => [
+          "X-RapidAPI-Host: text-to-speech-api3.p.rapidapi.com",
+          "X-RapidAPI-Key: $_ENV[audio_api_key]"
+        ],
+      ]);
+
+      $response = curl_exec($curl);
+      $err = curl_error($curl);
+
+      curl_close($curl);
+
+      if ($err) {
+        echo "cURL Error #:" . $err;
+      } else {
+        file_put_contents($audioFilePath, $response);
+      }
+    }
+
+
+    $curl = curl_init();
+
+    $text = "Hola, soy tincho.";
+    $lang = "es";
+    $audioFilePath = 'audios/hello_world_spanish.mp3';
+
+    textToSpeech($text, $lang, $audioFilePath, $curl);
+
+    ?>
+
+    <audio controls>
+      <source src="hello_world_spanish.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
      
 </body>
 </html>

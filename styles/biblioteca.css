@@ -100,3 +100,12 @@ div.libro:hover{
 a#mas:hover{
     transform: scale(1.08);
 }
+
+label.tituloLibro{
+    height: 400px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-left: 100px;
+}
