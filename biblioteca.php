@@ -29,7 +29,7 @@
       <label class="tituloLibro">TITULO DE LIBRO</label>
      
      <?php // Consulta SQL para obtener los títulos de los libros
-$sql = "SELECT titulo FROM libros";
+$sql = "SELECT biblioteca FROM text"; // cortar el string hasta 1er enter
 $result = $conn->query($sql);
 
 // Verificar si la consulta devuelve filas
@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
     echo '<div class="libro">';
     echo '<label class="tituloLibro">'. $row["titulo"]. '</label>';
     echo '<label class="contenidoLibros">';
-    
+
     // Aquí podrías añadir más información de cada libro si fuera necesario
     echo '</label>';
     echo '</div>';
