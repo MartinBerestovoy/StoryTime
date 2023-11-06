@@ -28,6 +28,51 @@
     <div class="libro">
       <label class="tituloLibro">TITULO DE LIBRO</label>
      
+     
+      <?php
+// Configurar las variables de conexión a la base de datos
+$servername = "localhost";
+$username = "tu_usuario";
+$password = "tu_contraseña";
+$dbname = "tu_base_de_datos";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+  die("La conexión ha fallado: " . $conn->connect_error);
+}
+
+// Consulta SQL para obtener los títulos de los libros
+$sql = "SELECT text FROM biblioteca";
+$result = $conn->query($sql);
+
+// Verificar si la consulta devuelve filas
+if ($result->num_rows > 0) {
+  // Salida de datos de cada fila
+  while($row = $result->fetch_assoc()) {
+    // strtok() se usa aquí para obtener el substring hasta el primer salto de línea (\n)
+    $tituloCortado = strtok($row["titulo"], "\n");
+    echo '<div class="libro">';
+    echo '<label class="tituloLibro">'. $tituloCortado. '</label>';
+    echo '<label class="contenidoLibros">';
+    // Aquí podrías añadir más información de cada libro si fuera necesario
+    echo '</label>';
+    echo '</div>';
+  }
+} else {
+  echo "0 resultados";
+}
+
+// Cerrar la conexión
+$conn->close();
+?>
+
+     
+     
+     
+   
      <?php // Consulta SQL para obtener los títulos de los libros
 $sql = "SELECT biblioteca FROM text"; // cortar el string hasta 1er enter
 $result = $conn->query($sql);
@@ -51,7 +96,7 @@ if ($result->num_rows > 0) {
 
 // Cerrar la conexión
 $conn->close();
-?>?>
+?>
       </label>
     </div>
   </section>
