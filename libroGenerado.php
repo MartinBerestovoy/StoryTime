@@ -14,6 +14,15 @@
   <nav class="navVolverAtras" id="contenedorBoton">
     <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
     </a>
+
+    <?php 
+    if (isset($_SESSION["username"])) {
+      echo '<div id="iconoCuenta">
+        <a href="infoCuenta.php"><img src="imgProyecto/Group 9.svg" alt="Icono de cuenta" class="iconoCuenta"></a>
+      </div>';
+    }
+    ?>
+
   </nav>
 
   <script>
@@ -42,7 +51,7 @@
   <br>
   <br>
   <br>
-  
+
   <div class="audio">
     <?php
 
