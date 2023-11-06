@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,22 +27,33 @@
 
     <div class="libro">
       <label class="tituloLibro">TITULO DE LIBRO</label>
-      <label class="contenidoLibros">
-      </label>
-    </div>
+     
+     <?php // Consulta SQL para obtener los títulos de los libros
+$sql = "SELECT titulo FROM libros";
+$result = $conn->query($sql);
 
-    <div class="libro">
-      <label class="tituloLibro">TITULO DE LIBRO</label>
-      <label class="contenidoLibros">
-      </label>
-    </div>
+// Verificar si la consulta devuelve filas
+if ($result->num_rows > 0) {
 
-    <div class="libro">
-      <label class="tituloLibro">TITULO DE LIBRO</label>
-      <label class="contenidoLibros">
+  // Salida de datos de cada fila
+  while($row = $result->fetch_assoc()) {
+    echo '<div class="libro">';
+    echo '<label class="tituloLibro">'. $row["titulo"]. '</label>';
+    echo '<label class="contenidoLibros">';
+    
+    // Aquí podrías añadir más información de cada libro si fuera necesario
+    echo '</label>';
+    echo '</div>';
+  }
+} else {
+  echo "0 resultados";
+}
+
+// Cerrar la conexión
+$conn->close();
+?>?>
       </label>
     </div>
-    <br> 
   </section>
   
   <br>
