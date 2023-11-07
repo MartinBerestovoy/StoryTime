@@ -74,7 +74,7 @@ $conn->close();
      
    
      <?php // Consulta SQL para obtener los títulos de los libros
-$sql = "SELECT biblioteca FROM text"; // cortar el string hasta 1er enter
+$sql = "SELECT text FROM bibloteca"; // cortar el string hasta 1er enter
 $result = $conn->query($sql);
 
 // Verificar si la consulta devuelve filas
