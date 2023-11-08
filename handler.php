@@ -1,78 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="styles/handler.css">
-     <title>Document</title>
-     <link rel="stylesheet" href="styles/libroGenerado.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/handler.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/libroGenerado.css">
 </head>
+
 <body>
 
 
-<?php
+  <?php
 
-$tematicas = $_POST['tematicas'];
-$tematicasConcatenadas = "";
+  $tematicas = $_POST['tematicas'];
+  $tematicasConcatenadas = "";
 
-for ($i = 0; $i < count($tematicas); $i++) 
-{
-     if($i == 0)
-     {
-          $tematicasConcatenadas = $tematicas[0];
-     }
-     else if($i == count($tematicas))
-     {
-          $tematicasConcatenadas .= "y " . end($tematicas);
-     }
-     else
-     {
-          $tematicasConcatenadas .= ", " . $tematicas[$i];
-     }
-}
+  for ($i = 0; $i < count($tematicas); $i++) {
+    if ($i == 0) {
+      $tematicasConcatenadas = $tematicas[0];
+    } else if ($i == count($tematicas)) {
+      $tematicasConcatenadas .= "y " . end($tematicas);
+    } else {
+      $tematicasConcatenadas .= ", " . $tematicas[$i];
+    }
+  }
 
-$personajes = $_POST['personajes'];
-$personajesConcatenados = "";
+  $personajes = $_POST['personajes'];
+  $personajesConcatenados = "";
 
-for ($i = 0; $i < count($personajes); $i++) 
-{
-     if($i == 0)
-     {
-          $personajesConcatenados = $personajes[0];
-     }
-     else if($i == count($personajes))
-     {
-          $personajesConcatenados .= "y " . end($personajes);
-     }
-     else
-     {
-         $personajesConcatenados .= ", " . $personajes[$i]; 
-     }
-}
+  for ($i = 0; $i < count($personajes); $i++) {
+    if ($i == 0) {
+      $personajesConcatenados = $personajes[0];
+    } else if ($i == count($personajes)) {
+      $personajesConcatenados .= "y " . end($personajes);
+    } else {
+      $personajesConcatenados .= ", " . $personajes[$i];
+    }
+  }
 
-$lugares = $_POST['lugares'];
-$lugaresConcatenados = "";
+  $lugares = $_POST['lugares'];
+  $lugaresConcatenados = "";
 
-for ($i = 0; $i < count($lugares); $i++) 
-{
-     if($i == 0)
-     {
-          $lugaresConcatenados = $lugares[0];
-     }
-     else if($i == count($lugares))
-     {
-          $lugaresConcatenados .= "y " . end($lugares);
-     }
-     else
-     {
-          $lugaresConcatenados .= ", " . $lugares[$i];
-     }
-}
+  for ($i = 0; $i < count($lugares); $i++) {
+    if ($i == 0) {
+      $lugaresConcatenados = $lugares[0];
+    } else if ($i == count($lugares)) {
+      $lugaresConcatenados .= "y " . end($lugares);
+    } else {
+      $lugaresConcatenados .= ", " . $lugares[$i];
+    }
+  }
 
-//POSIBLES CODIGOS --> CHAT GPT (((YA FUNCIONA - QUEDAN POR SI ACASO)))
-
-//OPCION 1:
+  //POSIBLES CODIGOS --> CHAT GPT (((YA FUNCIONA - QUEDAN POR SI ACASO)))
+  
+  //OPCION 1:
 // if(isset($_POST['tematicas']) && is_array($_POST['tematicas'])) {
 //      $tematicas = $_POST['tematicas'];
 //      $tematicasConcatenadas = implode(", ", $tematicas);
@@ -85,92 +69,113 @@ for ($i = 0; $i < count($lugares); $i++)
 //      $lugares = $_POST['lugares'];
 //      $lugaresConcatenados = implode(", ", $lugares);
 //  }
-
-//OPCION 2:
+  
+  //OPCION 2:
 //  $tematicas = $_POST['tematicas'];
 //  $tematicasConcatenadas = implode(', ', $tematicas);
 //  $personajes = $_POST['personajes'];
 //  $personajesConcatenados = implode(', ', $personajes);
 //  $lugares = $_POST['lugares'];
 //  $lugaresConcatenados = implode(', ', $lugares);
- 
-//OPCION 3:
+  
+  //OPCION 3:
 //  $tematicasConcatenadas = isset($_POST['tematicas']) ? implode(', ', $_POST['tematicas']) : '';
 //  $personajesConcatenados = isset($_POST['personajes']) ? implode(', ', $_POST['personajes']) : '';
 //  $lugaresConcatenados = isset($_POST['lugares']) ? implode(', ', $_POST['lugares']) : '';
+  
 
+  $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
+  $titulo_prompt = "Genera un titulo para el cuento";
 
-$final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
-$titulo_prompt = "Genera un titulo para el cuento";
+  echo $final_prompt;
 
-echo $final_prompt;
-
-// // URL a la que deseas hacer la solicitud
+  // // URL a la que deseas hacer la solicitud
 // $url = 'https://api.openai.com/v1/chat/completions';
-
-// // Inicializa una sesión cURL
+  
+  // // Inicializa una sesión cURL
 // $ch = curl_init($url);
-
-// // Establece opciones para la sesión cURL
+  
+  // // Establece opciones para la sesión cURL
 // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Hace que cURL devuelva la respuesta en lugar de imprimirla
-
-// // Ejecuta la solicitud HTTP GET
+  
+  // // Ejecuta la solicitud HTTP GET
 // $response = curl_exec($ch);
-
-// // Verifica si hubo errores en la solicitud
+  
+  // // Verifica si hubo errores en la solicitud
 // if (curl_errno($ch)) 
 // {
 //     echo 'Error en la solicitud cURL: ' . curl_error($ch);
 // }
-
-// // Cierra la sesión cURL
+  
+  // // Cierra la sesión cURL
 // curl_close($ch);
-
-// // Muestra la respuesta
+  
+  // // Muestra la respuesta
 // echo $response;
+  
+  $_ENV = parse_ini_file(".env");
 
-$_ENV = parse_ini_file(".env");
+  $role = "¡Hola! Soy StoryBot, tu amigable contador de cuentos. ¿Estás listo para embarcarte en una aventura emocionante? Siéntate cómodamente y déjame llevarte a un mundo lleno de imaginación. En el mágico reino de las historias, donde los personajes cobran vida y los sueños se hacen realidad, estoy aquí para crear un cuento largo y creativo solo para ti. El cuento tiene que ser lo mas largo posible y tiene que tener un solo capitulo.";
 
-$role = "¡Hola! Soy StoryBot, tu amigable contador de cuentos. ¿Estás listo para embarcarte en una aventura emocionante? Siéntate cómodamente y déjame llevarte a un mundo lleno de imaginación. En el mágico reino de las historias, donde los personajes cobran vida y los sueños se hacen realidad, estoy aquí para crear un cuento largo y creativo solo para ti. El cuento tiene que ser lo mas largo posible y tiene que tener un solo capitulo.";
-
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+  curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Content-Type: application/json',
     'Authorization: Bearer ' . $_ENV["openai_api_key"],
-]);
+  ]);
 
-$data = [
+  $data = [
     'model' => 'gpt-3.5-turbo',
     'messages' => [],
-];
+  ];
 
-$data['messages'][] = ['role' => 'system', 'content' => $role];
-$data['messages'][] = ['role' => 'user', 'content' => $final_prompt];
+  $data['messages'][] = ['role' => 'system', 'content' => $role];
+  $data['messages'][] = ['role' => 'user', 'content' => $final_prompt];
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-$response = curl_exec($ch);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+  $response = curl_exec($ch);
 
-$answer = "";
+  $answer = "";
 
-$decoded_response = json_decode($response, true);
-if (isset($decoded_response['choices'][0]['message']['content'])) {
+  $decoded_response = json_decode($response, true);
+  if (isset($decoded_response['choices'][0]['message']['content'])) {
     $answer = $decoded_response['choices'][0]['message']['content'];
-} else {
-    $answer = "Lorem ipsum dolor sit amet consectetur adipiscing, elit ante viverra nostra ornare. Placerat nisl bibendum sociosqu pulvinar euismod velit neque mattis nunc, luctus dui mus tristique nibh nulla nisi eget interdum nec, tempor class suspendisse dis maecenas quis rhoncus libero. Dui ultricies id aliquam elementum venenatis taciti sed tempus placerat sem, per integer lectus fusce vitae nascetur pharetra risus odio, curabitur natoque eu vestibulum interdum montes varius massa urna. Velit vel inceptos a luctus hendrerit rhoncus gravida ullamcorper libero, nibh malesuada suspendisse et penatibus aliquam tempor.";   
-}
+  } else {
+    $answer = "Lorem ipsum dolor sit amet consectetur adipiscing, elit ante viverra nostra ornare. Placerat nisl bibendum sociosqu pulvinar euismod velit neque mattis nunc, luctus dui mus tristique nibh nulla nisi eget interdum nec, tempor class suspendisse dis maecenas quis rhoncus libero. Dui ultricies id aliquam elementum venenatis taciti sed tempus placerat sem, per integer lectus fusce vitae nascetur pharetra risus odio, curabitur natoque eu vestibulum interdum montes varius massa urna. Velit vel inceptos a luctus hendrerit rhoncus gravida ullamcorper libero, nibh malesuada suspendisse et penatibus aliquam tempor.";
 
-curl_close($ch);
+    include "TyE/conexionServer.php";
+    error_reporting(0);
+    session_start();
 
-?>
+    $id_usuario = $_SESSION["id_usuario"];
 
-<nav class="navVolverAtras" id="contenedorBoton">
+    $sql = "INSERT INTO biblioteca (text, id_usuario, titulo) VALUES ('$answer', $id_usuario, 'hola')";
+
+    if ($stmt = $conn->prepare($sql)) {
+      if ($stmt->execute()) {
+        
+      } else {
+        echo "Error al ejecutar la sentencia preparada: " . $stmt->error;
+      }
+
+      $stmt->close();
+    } else {
+      echo "Error al preparar la sentencia: " . $conn->error;
+    }
+
+  }
+
+  curl_close($ch);
+
+  ?>
+
+  <nav class="navVolverAtras" id="contenedorBoton">
     <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
     </a>
 
-    <?php 
+    <?php
     if (isset($_SESSION["username"])) {
       echo '<div id="iconoCuenta">
         <a href="infoCuenta.php"><img src="imgProyecto/Group 9.svg" alt="Icono de cuenta" class="iconoCuenta"></a>
@@ -189,7 +194,7 @@ curl_close($ch);
 
   <div>
     <p id="libro">
-    <?php echo $answer; ?>
+      <?php echo $answer; ?>
     </p>
   </div>
 
@@ -249,6 +254,7 @@ curl_close($ch);
     </audio>
 
   </div>
-     
+
 </body>
+
 </html>
