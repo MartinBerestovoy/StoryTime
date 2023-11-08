@@ -26,7 +26,9 @@ var_dump($_POST);
   {
     $row = $result -> fetch_assoc();
     $_SESSION['username'] = $row['username'];
-    header("Location: ../biblioteca.php"); 
+    $_SESSION["id_usuario"] = $row["id"];
+    var_dump($_SESSION);
+    // header("Location: ../biblioteca.php"); 
     exit();
   }
   else
