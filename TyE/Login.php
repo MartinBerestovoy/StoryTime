@@ -3,38 +3,28 @@
 include "conexionServer.php";
 session_start();
 
-if(isset($_SESSION["username"]))
-{        
-  header("Location: ../bibilioteca.php");
-}
+$username = $_POST["username"];
+$password = md5($_POST["password"]);
 
-var_dump($_POST);
-  $username = $_POST["username"];
-  $password = md5($_POST["password"]);
+$sql = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
+$statement = $conn->prepare($sql);
+$statement->bind_param("ss", $username, $password);
+$statement->execute();
+$result = $statement->get_result();
 
-  echo $password;
-
-  $sql = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
-  $statement = $conn -> prepare($sql);
-  $statement -> bind_param("ss", $username, $password);
-  $statement -> execute();
-  $result = $statement -> get_result();
-
-  var_dump($result);
-
-  if($result -> num_rows > 0)
-  {
-    $row = $result -> fetch_assoc();
+if ($result->num_rows > 0) 
+{
+    $row = $result->fetch_assoc();
     $_SESSION['username'] = $row['username'];
     $_SESSION["id_usuario"] = $row["id"];
-    var_dump($_SESSION);
-    // header("Location: ../biblioteca.php"); 
+    echo '<script>alert("Inicio de sesión exitoso, momento de crear!");';
+    echo 'window.location.href="../biblioteca.php";</script>';
     exit();
-  }
-  else
-  {
-    echo "La contraseña o el nombre de usuario son incorrectos";
-  }
-
-
+} 
+else 
+{
+    echo '<script>alert("La cuenta o el nombre de usuario son incorrectos. Prueba intentando de nuevo o crea una cuenta");';
+    echo 'window.location.href="../inicioSesion.php";</script>';
+    exit();
+}
 ?>
