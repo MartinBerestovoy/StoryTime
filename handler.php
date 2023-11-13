@@ -145,7 +145,7 @@
   } else {
     $answer = "Lorem ipsum dolor sit amet consectetur adipiscing, elit ante viverra nostra ornare. Placerat nisl bibendum sociosqu pulvinar euismod velit neque mattis nunc, luctus dui mus tristique nibh nulla nisi eget interdum nec, tempor class suspendisse dis maecenas quis rhoncus libero. Dui ultricies id aliquam elementum venenatis taciti sed tempus placerat sem, per integer lectus fusce vitae nascetur pharetra risus odio, curabitur natoque eu vestibulum interdum montes varius massa urna. Velit vel inceptos a luctus hendrerit rhoncus gravida ullamcorper libero, nibh malesuada suspendisse et penatibus aliquam tempor.";
 
-    include "TyE/conexionServer.php";
+    include "TyE/conexionServer2.php";
     error_reporting(0);
     session_start();
 

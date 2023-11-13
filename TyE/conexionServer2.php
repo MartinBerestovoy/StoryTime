@@ -1,6 +1,6 @@
 <?php
 
-$_ENV = parse_ini_file("../.env");
+$_ENV = parse_ini_file("./.env");
 
 // Crea la conexión
 // $conn = new mysqli($_ENV["HOST"], $_ENV["USERNAME"], $_ENV["PASSWORD"], $_ENV["DATABASE"]);
