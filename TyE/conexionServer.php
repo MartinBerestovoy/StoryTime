@@ -5,7 +5,7 @@ $_ENV = parse_ini_file("./.env");
 // Crea la conexión
 // $conn = new mysqli($_ENV["HOST"], $_ENV["USERNAME"], $_ENV["PASSWORD"], $_ENV["DATABASE"]);
 
-    $conn = mysqli_init();
+  $conn = mysqli_init();
   $conn->ssl_set(NULL, NULL, "./cacert.pem", NULL, NULL);
   $conn->real_connect($_ENV["HOST"], $_ENV["USERNAME"], $_ENV["PASSWORD"], $_ENV["DATABASE"]);
 
