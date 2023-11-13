@@ -155,7 +155,7 @@
 
     if ($stmt = $conn->prepare($sql)) {
       if ($stmt->execute()) {
-        
+
       } else {
         echo "Error al ejecutar la sentencia preparada: " . $stmt->error;
       }
@@ -210,7 +210,7 @@
 
     $_ENV = parse_ini_file(".env");
 
-    function textToSpeech(string $text, string $lang, string $audioFilePath, $curl): void
+    function textToSpeech(string $text, string $lang, $curl): void
     {
       curl_setopt_array($curl, [
         CURLOPT_URL => "https://text-to-speech-api3.p.rapidapi.com/speak?text=$text&lang=$lang",
@@ -234,23 +234,35 @@
       if ($err) {
         echo "cURL Error #:" . $err;
       } else {
-        file_put_contents($audioFilePath, $response);
+        #file_put_contents($audioFilePath, $response);
+        #var_dump($response);
       }
+      #echo base64_encode($response);
+    
+      echo "
+        <script>
+
+          document.addEventListener('DOMContentLoaded', () => {
+            var audioitem = document.querySelector('#audio');
+            audioitem.src = 'data:audio/mp3;base64," . base64_encode($response) . "';
+            console.log('" . base64_encode($response) . "');
+          });
+        </script>
+      ";
     }
 
 
     $curl = curl_init();
 
-    $text = "Hola, soy tincho.";
+    $text = $answer; // Meter el cuento
     $lang = "es";
-    $audioFilePath = 'audios/hello_world_spanish.mp3';
 
-    textToSpeech($text, $lang, $audioFilePath, $curl);
+    textToSpeech($text, $lang, $curl);
 
     ?>
 
-    <audio controls>
-      <source src="hello_world_spanish.mp3" type="audio/mpeg">
+    <audio controls id="audio">
+      <source src="" type="audio/mp3">
     </audio>
 
   </div>
