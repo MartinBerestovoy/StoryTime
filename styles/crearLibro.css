@@ -20,6 +20,20 @@ body{
     z-index: 1000; /* Configurar un z-index alto para que aparezca por encima de otros elementos */
  }
  
+ img.TickForm{
+    height: 55px ;
+    width: auto;
+    margin: 5px;
+    background-color: #e8d5cf;
+    border-radius: 50%;
+ }
+ 
+ img.TickForm:hover{
+   background-color: #628965;
+   border-radius: 50%;
+   transform: scale(1.08);
+ }
+
  img.botonVolver{
     height: 55px ;
     width: auto;
@@ -31,6 +45,7 @@ body{
  img.botonVolver:hover{
    background-color: #628965;
    border-radius: 50%;
+   transform: scale(1.08);
  }
 
  img.iconoCuenta{

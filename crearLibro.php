@@ -12,7 +12,16 @@
   
   <nav class="navVolverAtras" id="contenedorBoton">
     <div class="botonVolver">
-      <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver"></a>
+      <a onclick="volverAtras()"><img src="imgProyecto/image 6.svg" alt="Boton de Volver" class="botonVolver"></a>
+      <script> //script del nav
+        function volverAtras() {
+        window.history.back();
+      }
+      </script> 
+    </div>
+
+    <div class="tickHacerLibro"> 
+      <img src="imgProyecto/TickHacerForm.svg" alt="tick" class="TickForm"></a>
     </div>
   </nav>
   <script> //script del nav
