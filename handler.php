@@ -140,6 +140,7 @@
   $answer = "";
 
   $decoded_response = json_decode($response, true);
+  var_dump($decoded_response);
   if (isset($decoded_response['choices'][0]['message']['content'])) {
     $answer = $decoded_response['choices'][0]['message']['content'];
   } else {
