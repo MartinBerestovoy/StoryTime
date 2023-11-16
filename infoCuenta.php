@@ -26,19 +26,19 @@
     <br>
     <br>
 
-    <?php
+     <?php
 
-   $userId = $_SESSION['user_id'];
+  //  $userId = $_SESSION['user_id'];
    
-   $sql = "SELECT username FROM usuarios WHERE id = '$userId'"; // Suponiendo que la tabla se llama 'users' y la columna del nombre de usuario es 'username'.
-   $result = $conn->query($sql);
+  //  $sql = "SELECT username FROM usuarios WHERE id = '$userId'"; // Suponiendo que la tabla se llama 'users' y la columna del nombre de usuario es 'username'.
+  //  $result = $conn->query($sql);
    
-   if (isset($_SESSION["username"])) 
-   {
-       $row = $result->fetch_assoc();
-       $nombreUsuario = $row['username'];
+  //  if (isset($_SESSION["username"])) 
+  //  {
+  //      $row = $result->fetch_assoc();
+  //      $nombreUsuario = $row['username'];
   
-   }
+  //  }
 ?>
 
     <div class="datos-perfil">
@@ -50,7 +50,7 @@
     <br>
     <br>
     <br>
-      <button id="desloguear">Desloguearse</button>
+      <button id="desloguear" href="https://instagram.com/tinchoberes">Desloguearse</button>
     </section>
 
     <script src="infoCuenta.js"></script>
