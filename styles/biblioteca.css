@@ -47,7 +47,6 @@ div#iconoCuenta:hover {
     transform: scale(1.08);
 }
 
-
 /* centra la imagen del logo y establece un margen debajo de ella */
 img.logo {
     display: block;

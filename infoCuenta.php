@@ -44,13 +44,13 @@
     <div class="datos-perfil">
       <div class="username">
         <label>Nombre de usuario:</label>
-        <input type="text" id="nombreUsuario" value="<?php echo $nombreUsuario; ?>" readonly> 
+        <input type="text" id="nombreUsuario" value="<?php echo $_SESSION["username"]; ?>" readonly> 
       </div>
     <br>
     <br>
     <br>
     <br>
-      <button id="desloguear" href="https://instagram.com/tinchoberes">Desloguearse</button>
+      <a class="button" id="desloguear" href="https://instagram.com/tinchoberes">Desloguearse</a>
     </section>
 
     <script src="infoCuenta.js"></script>
