@@ -10,7 +10,7 @@
 <body>
 
   <nav class="navVolverAtras" id="contenedorBoton">
-    <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
+    <a onclick="volverAtras()"><img src="imgProyecto/image 6.svg" alt="Boton de Volver" class="botonVolver">
     </a>
   </nav>
 
@@ -39,7 +39,7 @@
         </div>
 
       <div class="submitBtn">
-        <input type="submit" value="Iniciar">
+        <input type="submit" value="INICIAR">
       </div>
 
       <div class="registrarse">

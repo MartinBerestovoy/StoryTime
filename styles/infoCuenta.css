@@ -11,30 +11,45 @@ body {
     color: #333;
  }
 
-.perfil-container {
+img.botonVolver{
+    height: 55px ;
+    width: auto;
+    margin: 5px;
+    background-color: #e8d5cf;
+    border-radius: 50%;
+    transition: transform 0.5s ease; /* Ajusta la duración según lo lento que quieras que sea */
+ }
+ 
+ img.botonVolver:hover{
+   background-color: #628965;
+   border-radius: 50%;
+   transform: scale(1.08);
+ }
+
+div.perfilContainer {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
 }
 
-.foto-perfil img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-    border: 3px solid #7e6c66;
+div.datosPerfil {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+    justify-self: center;
 }
 
-.datos-perfil label {
+div.datosPerfil label {
     display: flex;
     margin-top: 10px;
     align-items: center;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+ }
 
-}
-
-
-a.button {
+button {
     display: block;
     width: 400px;
     padding: 10px;
@@ -46,7 +61,7 @@ a.button {
     cursor: pointer;
  }
 
- a.button{
+ button{
     /* Cambia el color del texto del enlace a cualquier color que desees, por ejemplo, negro */
     color: #000;
     /* Elimina el subrayado del enlace */
@@ -58,23 +73,92 @@ button:hover{
     
 }
 
-/* Ocultamos el input original */
-.file-upload-input {
-    display: none;
+input {
+    width: 378px;
+    display: flex;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 18px;
 }
 
-/* Estilizamos la etiqueta para que parezca un botón */
-.file-upload-label {
-    padding: 10px 15px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: 3px solid #253727;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
 
-.file-upload-label:hover {
-    background-color: #45a049;
-}
+/* Estilos globales */
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #e8d5cf;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333;
+ }
+ 
+  /* Estilo para el contenedor del botón */
+  #contenedorBoton {
+    position: fixed; /* Fijar la posición */
+    top: 0; /* Alineación vertical en la parte superior */
+    left: 0; /* Alineación horizontal a la izquierda */
+    z-index: 1000; /* Configurar un z-index alto para que aparezca por encima de otros elementos */
+    background-color: #e8d5cf;
+ }
+ 
+ img.botonVolver{
+    height: 55px ;
+    width: auto;
+    margin: 5px;
+ }
+ 
+ img.botonVolver:hover{
+   background-color: #628965;
+   border-radius: 50%;
+ }
+ 
+ /* define un ancho máximo y estilo para el formulario, asegurando que esté centrado */
+ div.datosPerfil {
+    max-width: 422px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+ }
+ 
+ /* centra la imagen del logo y establece un margen debajo de ella */
+ img.logo {
+    display: block;
+    width: 250px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    max-width: 400px;
+ }
+ 
+ /* establece el tamaño de fuente y el margen inferior del título del formulario */
+ #titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+ }
+ 
+ div.username {
+    margin-bottom: 20px;
+ }
+ 
+ /* son mostradas en bloques con un peso de fuente en negrita. */
+ label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+ }
+ 
+ /* definen estilos para los campos de texto y contraseñas. Están configurados para tener un fondo blanco y bordes redondeados */
+ input {
+    width: 378px;
+    display: flex;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 18px;
+ }

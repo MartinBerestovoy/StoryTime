@@ -13,22 +13,13 @@
   <nav class="navVolverAtras" id="contenedorBoton">
     <div class="botonVolver">
       <a onclick="volverAtras()"><img src="imgProyecto/image 6.svg" alt="Boton de Volver" class="botonVolver"></a>
+    </div>
       <script> //script del nav
         function volverAtras() {
         window.history.back();
       }
       </script> 
-    </div>
-
-    <div class="tickHacerLibro"> 
-      <img src="imgProyecto/TickHacerForm.svg" alt="tick" class="TickForm"></a>
-    </div>
   </nav>
-  <script> //script del nav
-    function volverAtras() {
-    window.history.back();
-    }
-  </script> 
 
   <div class="contenedor">
   <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo">  <!--Logo de App-->
@@ -185,7 +176,9 @@
       </section>
       <br>
       <br>
-      <button type="submit" class="button">CREAR HISTORIA</button>
+      <div class="btnCrear"></div>
+        <button type="submit" class="botonCrear">CREAR &#10004;</button>
+      </div>
     </form>
 
 </body>

@@ -10,48 +10,36 @@
     <link rel="stylesheet" href="styles/infoCuenta.css">
 </head>
 <body>
-  <section class="perfil-container">
-    <div class="foto-perfil">
-      <img src="ruta/por/defecto.jpg" alt="Foto de perfil" id="foto">
-      <br>
-      <div class="custom-file-upload"> <!-- cosito para poner tu propia foto de tus archivos -->
-        <label for="cargarFoto" class="file-upload-label">
-            Subir imagen
-        </label>
-        <input type="file" id="cargarFoto" class="file-upload-input">
-    </div> 
-    </div>
 
-    <br>
-    <br>
-    <br>
+  <nav class="navVolverAtras" id="contenedorBoton">
+    <a onclick="volverAtras()"><img src="imgProyecto/image 6.svg" alt="Boton de Volver" class="botonVolver">
+    </a>
+  </nav>
 
-     <?php
+  <script> //script del nav
+    function volverAtras() {
+    window.history.back();
+    }
 
-  //  $userId = $_SESSION['user_id'];
-   
-  //  $sql = "SELECT username FROM usuarios WHERE id = '$userId'"; // Suponiendo que la tabla se llama 'users' y la columna del nombre de usuario es 'username'.
-  //  $result = $conn->query($sql);
-   
-  //  if (isset($_SESSION["username"])) 
-  //  {
-  //      $row = $result->fetch_assoc();
-  //      $nombreUsuario = $row['username'];
-  
-  //  }
-?>
+  </script>
 
-    <div class="datos-perfil">
+  <div class="datosPerfil">
+  <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo"> <!--Logo de App-->
+    <h1 id="titulo">INFORMACION DE CUENTA</h1>
+
+    <form method="post" action="TyE/Login.php">
       <div class="username">
-        <label>Nombre de usuario:</label>
+        <label id="nombre"> NOMBRE DE USUARIO</label>
+
+        <br>
+
         <input type="text" id="nombreUsuario" value="<?php echo $_SESSION["username"]; ?>" readonly> 
       </div>
-    <br>
-    <br>
-    <br>
-    <br>
-      <a class="button" id="desloguear" href="https://instagram.com/tinchoberes">Desloguearse</a>
-    </section>
+
+      <br>
+
+    <button class="button" id="desloguear" href="https://instagram.com/tinchoberes">Desloguearse</button>
+  </section>
 
     <script src="infoCuenta.js"></script>
 </body>

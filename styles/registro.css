@@ -23,11 +23,13 @@ img.botonVolver{
    height: 55px ;
    width: auto;
    margin: 5px;
+   transition: transform 0.5s ease; /* Ajusta la duración según lo lento que quieras que sea */
 }
 
 img.botonVolver:hover{
   background-color: #628965;
   border-radius: 50%;
+  transform: scale(1.08);
 }
 
  

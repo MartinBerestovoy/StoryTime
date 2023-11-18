@@ -15,7 +15,7 @@ include_once("./conexionServer.php");
 
 <nav class="navVolverAtras" id="contenedorBoton">
     <div class="botonVolver">
-      <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver"></a>
+      <a onclick="volverAtras()"><img src="imgProyecto/image 6.svg" alt="Boton de Volver" class="botonVolver"></a>
     </div>
 
     <?php 

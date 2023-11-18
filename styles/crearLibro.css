@@ -19,20 +19,6 @@ body{
     left: 0; /* Alineación horizontal a la izquierda */
     z-index: 1000; /* Configurar un z-index alto para que aparezca por encima de otros elementos */
  }
- 
- img.TickForm{
-    height: 55px ;
-    width: auto;
-    margin: 5px;
-    background-color: #e8d5cf;
-    border-radius: 50%;
- }
- 
- img.TickForm:hover{
-   background-color: #628965;
-   border-radius: 50%;
-   transform: scale(1.08);
- }
 
  img.botonVolver{
     height: 55px ;
@@ -40,12 +26,14 @@ body{
     margin: 5px;
     background-color: #e8d5cf;
     border-radius: 50%;
+    transition: transform 0.5s ease; /* Ajusta la duración según lo lento que quieras que sea */
  }
  
  img.botonVolver:hover{
    background-color: #628965;
    border-radius: 50%;
    transform: scale(1.08);
+
  }
 
  img.iconoCuenta{
@@ -106,6 +94,7 @@ div.pictograma{
     box-shadow: 15px 15px 25px #1f462696;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    transition: transform 0.5s ease; /* Ajusta la duración según lo lento que quieras que sea */
 }
 
 /* modificamos los label dentro de los div clase pictograma dentro del form */
@@ -158,15 +147,24 @@ section{
     overflow-x:scroll;
 }
 
+div.btnCrear{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 button {
+    margin-left: 41vw;
     width: auto;
     padding: 10px;
-    background-color: #ffffff;
+    background-color: #ffffff00;
     color: #000000;
-    border: 3px solid #7e6c66;
-    border-radius: 4px;
-    font-size: 18px;
+    border: 6px solid #000000;
+    border-radius: 50px;
+    font-size: 34px;
     cursor: pointer;
+    display: flex;
+    transition: transform 0.5s ease; /* Ajusta la duración según lo lento que quieras que sea */
+    font-weight: 600;
  }
 
  a.button{
@@ -177,7 +175,9 @@ button {
 }
 
 button:hover{
-   background-color: #896362;
+   background-color: #628965;
+   transform: scale(1.08);
+   
 }
 
 section.form{
