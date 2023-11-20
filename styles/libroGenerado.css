@@ -27,6 +27,23 @@ img.botonVolver{
    
 
  }
+
+ /* centra la imagen del logo y establece un margen debajo de ella */
+ img.logo {
+    display: block;
+    width: 250px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    max-width: 400px;
+ }
+
+ h2{
+    text-align: center;  /* Centra horizontalmente */
+}
+
+h1{
+    text-align: center;  /* Centra horizontalmente */
+}
  
 p#libro{
     margin-top: 60px;

@@ -193,6 +193,14 @@
     }
   </script>
 
+<div class="contenedor">
+  <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo">  <!--Logo de App-->
+  </div>
+
+  <div class="h1">
+    <h1 class="headline" id="titulo">CREAR LIBRO</h1>
+  </div>
+  
   <div>
     <p id="libro">
       <?php echo $answer; ?>
