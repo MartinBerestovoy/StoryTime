@@ -87,8 +87,6 @@
   $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
   $titulo_prompt = "Genera un titulo para el cuento";
 
-  echo $final_prompt;
-
   // // URL a la que deseas hacer la solicitud
 // $url = 'https://api.openai.com/v1/chat/completions';
   
