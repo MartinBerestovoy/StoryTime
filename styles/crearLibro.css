@@ -190,7 +190,7 @@ section.form{
 
  /* Select all div elements that have a checked input child */
 div:has(input:checked) {
-    background-color: green;
+    background-color:#448148;
   }
 
   div.contenedor {
