@@ -38,7 +38,7 @@
 
       <br>
 
-    <button class="button" id="desloguear" href="https://instagram.com/tinchoberes">Desloguearse</button>
+    <button class="button" id="desloguear" href="index: ../logout.php">Desloguearse</button>
   </section>
 
     <script src="infoCuenta.js"></script>
