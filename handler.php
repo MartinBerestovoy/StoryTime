@@ -12,6 +12,26 @@
 
 <body>
 
+  <nav class="navVolverAtras" id="contenedorBoton">
+    <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver"></a>
+
+    <?php
+      if (isset($_SESSION["username"])) {
+        echo '<div id="iconoCuenta">
+          <a href="infoCuenta.php"><img src="imgProyecto/Group 9.svg" alt="Icono de cuenta" class="iconoCuenta"></a>
+        </div>';
+      }
+    ?>
+
+  </nav>
+
+  <script>
+    //script del nav
+    function volverAtras() {
+      window.history.back();
+    }
+  </script>
+
 
   <?php
 
@@ -169,27 +189,6 @@
   curl_close($ch);
 
   ?>
-
-  <nav class="navVolverAtras" id="contenedorBoton">
-    <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver">
-    </a>
-
-    <?php
-    if (isset($_SESSION["username"])) {
-      echo '<div id="iconoCuenta">
-        <a href="infoCuenta.php"><img src="imgProyecto/Group 9.svg" alt="Icono de cuenta" class="iconoCuenta"></a>
-      </div>';
-    }
-    ?>
-
-  </nav>
-
-  <script>
-    //script del nav
-    function volverAtras() {
-      window.history.back();
-    }
-  </script>
 
 <div class="contenedor">
   <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo">  <!--Logo de App-->
