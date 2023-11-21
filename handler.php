@@ -16,11 +16,11 @@
     <a onclick="volverAtras()"><img src="imgProyecto/boton-volver.png" alt="Boton de Volver" class="botonVolver"></a>
 
     <?php
-      if (isset($_SESSION["username"])) {
-        echo '<div id="iconoCuenta">
+    if (isset($_SESSION["username"])) {
+      echo '<div id="iconoCuenta">
           <a href="infoCuenta.php"><img src="imgProyecto/Group 9.svg" alt="Icono de cuenta" class="iconoCuenta"></a>
         </div>';
-      }
+    }
     ?>
 
   </nav>
@@ -105,8 +105,6 @@
   
 
   $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
-  $titulo_prompt = "Genera un titulo para el cuento";
-
   // // URL a la que deseas hacer la solicitud
 // $url = 'https://api.openai.com/v1/chat/completions';
   
@@ -190,8 +188,8 @@
 
   ?>
 
-<div class="contenedor">
-  <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo">  <!--Logo de App-->
+  <div class="contenedor">
+    <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo"> <!--Logo de App-->
   </div>
 
   <div class="h1">
@@ -204,47 +202,47 @@
     </p>
 
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-  <div class="audio">
-    <?php
+    <div class="audio">
+      <?php
 
-    $_ENV = parse_ini_file(".env");
+      $_ENV = parse_ini_file(".env");
 
-    function textToSpeech(string $text, string $lang, $curl): void
-    {
-      curl_setopt_array($curl, [
-        CURLOPT_URL => "https://text-to-speech-api3.p.rapidapi.com/speak?text=$text&lang=$lang",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "GET",
-        CURLOPT_HTTPHEADER => [
-          "X-RapidAPI-Host: text-to-speech-api3.p.rapidapi.com",
-          "X-RapidAPI-Key: $_ENV[audio_api_key]"
-        ],
-      ]);
+      function textToSpeech(string $text, string $lang, $curl): void
+      {
+        curl_setopt_array($curl, [
+          CURLOPT_URL => "https://text-to-speech-api3.p.rapidapi.com/speak?text=$text&lang=$lang",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "GET",
+          CURLOPT_HTTPHEADER => [
+            "X-RapidAPI-Host: text-to-speech-api3.p.rapidapi.com",
+            "X-RapidAPI-Key: $_ENV[audio_api_key]"
+          ],
+        ]);
 
-      $response = curl_exec($curl);
-      $err = curl_error($curl);
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
 
-      curl_close($curl);
+        curl_close($curl);
 
-      if ($err) {
-        echo "cURL Error #:" . $err;
-      } else {
-        #file_put_contents($audioFilePath, $response);
-        #var_dump($response);
-      }
-      #echo base64_encode($response);
-    
-      echo "
+        if ($err) {
+          echo "cURL Error #:" . $err;
+        } else {
+          #file_put_contents($audioFilePath, $response);
+          #var_dump($response);
+        }
+        #echo base64_encode($response);
+      
+        echo "
         <script>
 
           document.addEventListener('DOMContentLoaded', () => {
@@ -254,23 +252,23 @@
           });
         </script>
       ";
-    }
+      }
 
 
-    $curl = curl_init();
+      $curl = curl_init();
 
-    $text = $answer; // Meter el cuento
-    $lang = "es";
+      $text = $answer; // Meter el cuento
+      $lang = "es";
 
-    textToSpeech($text, $lang, $curl);
+      textToSpeech($text, $lang, $curl);
 
-    ?>
+      ?>
 
-    <audio controls id="audio">
-      <source src="" type="audio/mp3">
-    </audio>
-  </div>
-<br>
+      <audio controls id="audio">
+        <source src="" type="audio/mp3">
+      </audio>
+    </div>
+    <br>
 </body>
 
 </html>
