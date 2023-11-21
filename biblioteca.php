@@ -65,13 +65,15 @@ if ($conn->connect_error) {
 }
 
 // Asegúrate de que $id está definida y es segura
-if (isset($id)) {
+if (isset($_SESSION["id_usuario"])) {
   $id = $conn->real_escape_string($id); // Escapa la variable para prevenir inyección SQL
 
   // Consulta SQL para obtener los títulos de los libros
-  $sql = "SELECT biblioteca.text, biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '$id'";
+  $sql = "SELECT biblioteca.text, biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '". $_SESSION["id_usuario"]."'";
   
   $result = $conn->query($sql);
+
+  var_dump($result);
 
   // Verificar si la consulta fue exitosa
   if ($result) {
@@ -80,9 +82,9 @@ if (isset($id)) {
           // Salida de datos de cada fila
           while ($row = $result->fetch_assoc()) {
               // strtok() se usa aquí para obtener el substring hasta el primer salto de línea (\n)
-              $tituloCortado = htmlspecialchars(strtok($row["text"], "\n"));
+              // $tituloCortado = htmlspecialchars(strtok($row["text"], "\n"));
               echo '<div class="libro">';
-              echo '<label class="tituloLibro">'. $tituloCortado. '</label>';
+              echo '<label class="tituloLibro">'. $row["titulo"]. '</label>';
               echo '<label class="contenidoLibros">';
               // Aquí podrías añadir más información de cada libro si fuera necesario
               echo '</label>';
