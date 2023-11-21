@@ -162,13 +162,60 @@
   } else {
     $answer = "Este es el texto del libro";
 
+    $title_prompt = "Genera un titulo para este libro: " . $answer;
+
     include "TyE/conexionServer2.php";
     error_reporting(0);
     session_start();
 
+    if ($stmt = $conn->prepare($sql)) {
+      if ($stmt->execute()) {
+
+      } else {
+        echo "Error al ejecutar la sentencia preparada: " . $stmt->error;
+      }
+
+      $stmt->close();
+    } else {
+      echo "Error al preparar la sentencia: " . $conn->error;
+    }
+
+  }
+
+  curl_close($ch);
+
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+  curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json',
+    'Authorization: Bearer ' . $_ENV["openai_api_key"],
+  ]);
+
+  $data = [
+    'model' => 'gpt-3.5-turbo',
+    'messages' => [],
+  ];
+
+  $data['messages'][] = ['role' => 'system', 'content' => $role];
+  $data['messages'][] = ['role' => 'user', 'content' => $title_prompt];
+
+  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+  $response = curl_exec($ch);
+
+  $title = "";
+
+  $decoded_response = json_decode($response, true);
+  var_dump($decoded_response);
+  if (isset($decoded_response['choices'][0]['message']['content'])) {
+    $title = $decoded_response['choices'][0]['message']['content'];
+  } else {
+    $title = "Este es el titulo del libro";
+
     $id_usuario = $_SESSION["id_usuario"];
 
-    $sql = "INSERT INTO biblioteca (text, id_usuario, titulo) VALUES ('$answer', $id_usuario, 'hola')";
+    $sql = "INSERT INTO biblioteca (text, id_usuario, titulo) VALUES ('$answer', $id_usuario, '$title')";
 
     if ($stmt = $conn->prepare($sql)) {
       if ($stmt->execute()) {
