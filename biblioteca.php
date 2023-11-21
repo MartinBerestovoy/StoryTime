@@ -52,10 +52,11 @@ include_once("./conexionServer.php");
   </a>
 
 
-    <a class="libro">
+  <a class="libro">
       <label class="tituloLibro">TITULO DE LIBRO</label>
-     
-     
+      <a href="handler.php">class="tituloLibro"></a>
+  </a>
+  
       <?php
 
 
