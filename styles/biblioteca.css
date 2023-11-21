@@ -85,8 +85,8 @@ section.libros{
 
 
 section.libros{
-    max-height: 600px;  /* o cualquier otra altura que prefieras */
-    height: 900px;
+    max-height: 500px;  /* o cualquier otra altura que prefieras */
+    height: 600px;
     overflow-x: auto;   /* permite el desplazamiento vertical cuando el contenido excede la altura máxima */
     width: 100%;        /* opcional: ajusta el ancho si es necesario */
 
@@ -134,10 +134,12 @@ div.libros label {
 
 div.libro:hover{
     transform: scale(1.08);
+    transition: transform 0.5s ease; /* Ajusta la duración según lo lento que quieras que sea */
 }
 
 a#mas:hover{
     transform: scale(1.08);
+    transition: transform 0.5s ease; /* Ajusta la duración según lo lento que quieras que sea */
 }
 
 label.tituloLibro{
