@@ -52,7 +52,7 @@ include_once("./conexionServer.php");
   </a>
 
 
-    <div class="libro">
+    <a class="libro">
       <label class="tituloLibro">TITULO DE LIBRO</label>
      
      
@@ -108,7 +108,7 @@ if (isset($_SESSION["id_usuario"])) {
      
    
       </label>
-    </div>
+</a>
   </section>
   
   <br>

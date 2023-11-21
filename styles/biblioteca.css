@@ -93,7 +93,7 @@ section.libros{
 }
 
 /* modifico los div clase libro dentro del form */
-div.libro{
+a.libro{
     min-height: 400px; /* Establece la altura mínima */
     min-width: 350px; /* Establece el ancho mínimo */
     height: auto; /* Cambia de px a auto para que se ajuste automáticamente al contenido */
@@ -113,7 +113,7 @@ div.libro{
 }
 
 /* modificamos los label dentro de los div clase pictograma dentro del form */
-div.libros label {
+a.libros label {
     height: 100%; /* Cambia de px a porcentaje para que coincida con la altura del div padre */
     width: 100%; /* Cambia de px a porcentaje para que coincida con el ancho del div padre */
     display: block;
@@ -132,7 +132,7 @@ div.libros label {
 
 
 
-div.libro:hover{
+a.libro:hover{
     transform: scale(1.08);
     transition: transform 0.5s ease; /* Ajusta la duración según lo lento que quieras que sea */
 }
