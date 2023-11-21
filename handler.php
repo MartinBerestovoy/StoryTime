@@ -131,6 +131,8 @@
   
   $_ENV = parse_ini_file(".env");
 
+  session_start();
+
   $role = "¡Hola! Soy StoryBot, tu amigable contador de cuentos. ¿Estás listo para embarcarte en una aventura emocionante? Siéntate cómodamente y déjame llevarte a un mundo lleno de imaginación. En el mágico reino de las historias, donde los personajes cobran vida y los sueños se hacen realidad, estoy aquí para crear un cuento largo y creativo solo para ti. El cuento tiene que ser lo mas largo posible y tiene que tener un solo capitulo.";
 
   $ch = curl_init();
@@ -166,20 +168,6 @@
 
     include "TyE/conexionServer2.php";
     error_reporting(0);
-    session_start();
-
-    if ($stmt = $conn->prepare($sql)) {
-      if ($stmt->execute()) {
-
-      } else {
-        echo "Error al ejecutar la sentencia preparada: " . $stmt->error;
-      }
-
-      $stmt->close();
-    } else {
-      echo "Error al preparar la sentencia: " . $conn->error;
-    }
-
   }
 
   curl_close($ch);
@@ -213,9 +201,14 @@
   } else {
     $title = "Este es el titulo del libro";
 
+
     $id_usuario = $_SESSION["id_usuario"];
 
+
+
     $sql = "INSERT INTO biblioteca (text, id_usuario, titulo) VALUES ('$answer', $id_usuario, '$title')";
+
+    echo $sql;
 
     if ($stmt = $conn->prepare($sql)) {
       if ($stmt->execute()) {
