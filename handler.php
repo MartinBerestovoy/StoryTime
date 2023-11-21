@@ -198,14 +198,13 @@
   </div>
 
   <div class="h1">
-    <h1 class="headline" id="titulo">CREAR LIBRO</h1>
+    <h1 class="headline" id="titulo">LIBRO GENERADO</h1>
   </div>
-  
-  <div>
+
+  <div class="libroGenerado">
     <p id="libro">
       <?php echo $answer; ?>
     </p>
-  </div>
 
 
   <br>
@@ -273,7 +272,6 @@
     <audio controls id="audio">
       <source src="" type="audio/mp3">
     </audio>
-
   </div>
 
 </body>
