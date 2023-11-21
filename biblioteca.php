@@ -65,7 +65,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para obtener los títulos de los libros
-$sql = "SELECT text FROM biblioteca";
+$sql = "SELECT biblioteca.text FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = $id";
 $result = $conn->query($sql);
 
 // Verificar si la consulta devuelve filas
