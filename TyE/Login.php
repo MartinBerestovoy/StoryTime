@@ -23,7 +23,7 @@ if ($result->num_rows > 0)
 } 
 else 
 {
-    echo '<script>alert("La cuenta o el nombre de usuario son incorrectos. Prueba intentando de nuevo o crea una cuenta");';
+    echo '<script>alert("No hay ninguna cuenta iniciada! Intenta nuevamente iniciar sesion o create una cuenta!");';
     echo 'window.location.href="../inicioSesion.php";</script>';
     exit();
 }
