@@ -64,26 +64,38 @@ if ($conn->connect_error) {
   die("La conexión ha fallado: " . $conn->connect_error);
 }
 
-// Consulta SQL para obtener los títulos de los libros
-$sql = "SELECT biblioteca.text FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = $id";
-$result = $conn->query($sql);
+// Asegúrate de que $id está definida y es segura
+if (isset($id)) {
+  $id = $conn->real_escape_string($id); // Escapa la variable para prevenir inyección SQL
 
-// Verificar si la consulta devuelve filas
-if ($result->num_rows > 0) {
-  // Salida de datos de cada fila
-  while($row = $result->fetch_assoc()) {
-    // strtok() se usa aquí para obtener el substring hasta el primer salto de línea (\n)
-    
-    $tituloCortado = strtok($row["text"], "\n");
-    echo '<div class="libro">';
-    echo '<label class="tituloLibro">'. $tituloCortado. '</label>';
-    echo '<label class="contenidoLibros">';
-    // Aquí podrías añadir más información de cada libro si fuera necesario
-    echo '</label>';
-    echo '</div>';
+  // Consulta SQL para obtener los títulos de los libros
+  $sql = "SELECT biblioteca.text, biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '$id'";
+  
+  $result = $conn->query($sql);
+
+  // Verificar si la consulta fue exitosa
+  if ($result) {
+      // Verificar si la consulta devuelve filas
+      if ($result->num_rows > 0) {
+          // Salida de datos de cada fila
+          while ($row = $result->fetch_assoc()) {
+              // strtok() se usa aquí para obtener el substring hasta el primer salto de línea (\n)
+              $tituloCortado = htmlspecialchars(strtok($row["text"], "\n"));
+              echo '<div class="libro">';
+              echo '<label class="tituloLibro">'. $tituloCortado. '</label>';
+              echo '<label class="contenidoLibros">';
+              // Aquí podrías añadir más información de cada libro si fuera necesario
+              echo '</label>';
+              echo '</div>';
+          }
+      } else {
+          echo "0 resultados";
+      }
+  } else {
+      echo "Error en la consulta: " . $conn->error;
   }
 } else {
-  echo "0 resultados";
+  echo "ID no definido";
 }
 
 // Cerrar la conexión
