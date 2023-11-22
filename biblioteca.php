@@ -54,7 +54,7 @@ include_once("./conexionServer.php");
 
   <a class="libro">
       <label class="tituloLibro">TITULO DE LIBRO</label>
-      <a href="handler.php">class="tituloLibro"></a>
+      <a href="handler.php" class="tituloLibro"></a>
   </a>
   
       <?php
@@ -66,8 +66,8 @@ if ($conn->connect_error) {
 }
 
 // Asegúrate de que $id está definida y es segura
-if (isset($_SESSION["id_usuario"])) {
-  $id = $conn->real_escape_string($id); // Escapa la variable para prevenir inyección SQL
+if (isset($_SESSION["id_usuario"])) 
+{
 
   // Consulta SQL para obtener los títulos de los libros
   $sql = "SELECT biblioteca.text, biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '". $_SESSION["id_usuario"]."'";
