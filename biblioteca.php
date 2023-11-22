@@ -51,19 +51,36 @@ include_once("./conexionServer.php");
 
   </a>
 
+<?php
+//FALTA TERMINAR
+$sql = "SELECT titulo FROM biblioteca WHERE usuarios.id = biblioteca.id_usuario AND biblioteca.id = $id"; 
+$result = $conn->query($sql);
 
-  <a class="libro" onclick="redirectToHandler()">
-    <label class="tituloLibro">TITULO DE LIBRO</label>
+if ($result) {
+    if ($result->num_rows > 0) {
+        $fila = $result->fetch_assoc();
+        $titulo = $fila['titulo'];
+    } else {
+        $titulo = "Libro no encontrado";
+    }
+} else {
+    // Manejar errores de consulta si es necesario
+    $titulo = "Error en la consulta";
+}
+?>
+
+<a class="libro" onclick="redirectToLibroGenerado()">
+    <label class="tituloLibro"><?php echo $titulo; ?></label>
 </a>
 
 <script>
-    function redirectToHandler() {
-        window.location.href = 'handler.php';
+    function redirectToLibroGenerado() {
+        window.location.href = 'libroGenerado.php';
     }
 </script>
 
-      <?php
 
+<?php
 
 // Verificar conexión
 if ($conn->connect_error) {
@@ -75,7 +92,7 @@ if (isset($_SESSION["id_usuario"]))
 {
 
   // Consulta SQL para obtener los títulos de los libros
-  $sql = "SELECT biblioteca.text, biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '". $_SESSION["id_usuario"]."'";
+  $sql = "SELECT biblioteca.id, biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '". $_SESSION["id_usuario"]."'";
   
   $result = $conn->query($sql);
 
