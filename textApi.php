@@ -8,11 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['mensaje'])) {
         $prompt = $_POST['mensaje'];
 
-$aasfasf = curl_init();
-curl_setopt($aasfasf, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
-curl_setopt($aasfasf, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($aasfasf, CURLOPT_CUSTOMREQUEST, 'POST');
-curl_setopt($aasfasf, CURLOPT_HTTPHEADER, [
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Content-Type: application/json',
     'Authorization: Bearer ' . $_ENV["openai_api_key"],
 ]);
@@ -25,8 +25,8 @@ $data = [
 $data['messages'][] = ['role' => 'system', 'content' => $role];
 $data['messages'][] = ['role' => 'user', 'content' => $final_prompt];
 
-curl_setopt($aasfasf, CURLOPT_POSTFIELDS, json_encode($data));
-$response = curl_exec($aasfasf);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+$response = curl_exec($ch);
 
 $answer = "";
 
@@ -37,7 +37,7 @@ if (isset($decoded_response['choices'][0]['message']['content'])) {
     $answer = "Lorem ipsum dolor sit amet consectetur adipiscing, elit ante viverra nostra ornare. Placerat nisl bibendum sociosqu pulvinar euismod velit neque mattis nunc, luctus dui mus tristique nibh nulla nisi eget interdum nec, tempor class suspendisse dis maecenas quis rhoncus libero. Dui ultricies id aliquam elementum venenatis taciti sed tempus placerat sem, per integer lectus fusce vitae nascetur pharetra risus odio, curabitur natoque eu vestibulum interdum montes varius massa urna. Velit vel inceptos a luctus hendrerit rhoncus gravida ullamcorper libero, nibh malesuada suspendisse et penatibus aliquam tempor.";   
 }
 
-curl_close($aasfasf);
+curl_close($ch);
 
 echo $answer;
 
