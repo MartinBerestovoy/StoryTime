@@ -52,11 +52,16 @@ include_once("./conexionServer.php");
   </a>
 
 
-  <a class="libro">
-      <label class="tituloLibro">TITULO DE LIBRO</label>
-      <a href="handler.php" class="tituloLibro"></a>
-  </a>
-  
+  <a class="libro" onclick="redirectToHandler()">
+    <label class="tituloLibro">TITULO DE LIBRO</label>
+</a>
+
+<script>
+    function redirectToHandler() {
+        window.location.href = 'handler.php';
+    }
+</script>
+
       <?php
 
 
