@@ -34,46 +34,6 @@
 
 
   <?php
-
-  $tematicas = $_POST['tematicas'];
-  $tematicasConcatenadas = "";
-
-  for ($i = 0; $i < count($tematicas); $i++) {
-    if ($i == 0) {
-      $tematicasConcatenadas = $tematicas[0];
-    } else if ($i == count($tematicas)) {
-      $tematicasConcatenadas .= "y " . end($tematicas);
-    } else {
-      $tematicasConcatenadas .= ", " . $tematicas[$i];
-    }
-  }
-
-  $personajes = $_POST['personajes'];
-  $personajesConcatenados = "";
-
-  for ($i = 0; $i < count($personajes); $i++) {
-    if ($i == 0) {
-      $personajesConcatenados = $personajes[0];
-    } else if ($i == count($personajes)) {
-      $personajesConcatenados .= "y " . end($personajes);
-    } else {
-      $personajesConcatenados .= ", " . $personajes[$i];
-    }
-  }
-
-  $lugares = $_POST['lugares'];
-  $lugaresConcatenados = "";
-
-  for ($i = 0; $i < count($lugares); $i++) {
-    if ($i == 0) {
-      $lugaresConcatenados = $lugares[0];
-    } else if ($i == count($lugares)) {
-      $lugaresConcatenados .= "y " . end($lugares);
-    } else {
-      $lugaresConcatenados .= ", " . $lugares[$i];
-    }
-  }
-
   //POSIBLES CODIGOS --> CHAT GPT (((YA FUNCIONA - QUEDAN POR SI ACASO)))
   
   //OPCION 1:
@@ -103,8 +63,6 @@
 //  $personajesConcatenados = isset($_POST['personajes']) ? implode(', ', $_POST['personajes']) : '';
 //  $lugaresConcatenados = isset($_POST['lugares']) ? implode(', ', $_POST['lugares']) : '';
   
-
-  $final_prompt = "Crea un cuento el cual tenga como tematica/s " . $tematicasConcatenadas . ", que tenga de protagonista/s a " . $personajesConcatenados . " y que se lleve a cabo en " . $lugaresConcatenados;
   // // URL a la que deseas hacer la solicitud
 // $url = 'https://api.openai.com/v1/chat/completions';
   
@@ -128,112 +86,14 @@
   
   // // Muestra la respuesta
 // echo $response;
-  
-  $_ENV = parse_ini_file(".env");
-
-  session_start();
-
-  $role = "¡Hola! Soy StoryBot, tu amigable contador de cuentos. ¿Estás listo para embarcarte en una aventura emocionante? Siéntate cómodamente y déjame llevarte a un mundo lleno de imaginación. En el mágico reino de las historias, donde los personajes cobran vida y los sueños se hacen realidad, estoy aquí para crear un cuento largo y creativo solo para ti. El cuento tiene que ser lo mas largo posible y tiene que tener un solo capitulo.";
-
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-  curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Content-Type: application/json',
-    'Authorization: Bearer ' . $_ENV["openai_api_key"],
-  ]);
-
-  $data = [
-    'model' => 'gpt-3.5-turbo',
-    'messages' => [],
-  ];
-
-  $data['messages'][] = ['role' => 'system', 'content' => $role];
-  $data['messages'][] = ['role' => 'user', 'content' => $final_prompt];
-
-  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-  $response = curl_exec($ch);
-
-  $answer = "";
-
-  $decoded_response = json_decode($response, true);
-  var_dump($decoded_response);
-  if (isset($decoded_response['choices'][0]['message']['content'])) {
-    $answer = $decoded_response['choices'][0]['message']['content'];
-  } else {
-    $answer = "Este es el texto del libro";
-
-    $title_prompt = "Genera un titulo para este libro: " . $answer;
-
-    include "TyE/conexionServer2.php";
-    error_reporting(0);
-  }
-
-  curl_close($ch);
-
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-  curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Content-Type: application/json',
-    'Authorization: Bearer ' . $_ENV["openai_api_key"],
-  ]);
-
-  $data = [
-    'model' => 'gpt-3.5-turbo',
-    'messages' => [],
-  ];
-
-  $data['messages'][] = ['role' => 'system', 'content' => $role];
-  $data['messages'][] = ['role' => 'user', 'content' => $title_prompt];
-
-  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-  $response = curl_exec($ch);
-
-  $title = "";
-
-  $decoded_response = json_decode($response, true);
-  var_dump($decoded_response);
-  if (isset($decoded_response['choices'][0]['message']['content'])) {
-    $title = $decoded_response['choices'][0]['message']['content'];
-  } else {
-    $title = "Este es el titulo del libro";
-
-
-    $id_usuario = $_SESSION["id_usuario"];
-
-
-
-    $sql = "INSERT INTO biblioteca (text, id_usuario, titulo) VALUES ('$answer', $id_usuario, '$title')";
-
-    echo $sql;
-
-    if ($stmt = $conn->prepare($sql)) {
-      if ($stmt->execute()) {
-
-      } else {
-        echo "Error al ejecutar la sentencia preparada: " . $stmt->error;
-      }
-
-      $stmt->close();
-    } else {
-      echo "Error al preparar la sentencia: " . $conn->error;
-    }
-
-  }
-
-  curl_close($ch);
-
-  ?>
+    ?>
 
   <div class="contenedor">
     <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo"> <!--Logo de App-->
   </div>
 
   <div class="h1">
-    <h1 class="headline" id="titulo"> <?php echo($title); ?> </h1>
+    <h1 class="headline" id="titulo">LIBRO GENERADO</h1>
   </div>
 
   <div class="libroGenerado">
