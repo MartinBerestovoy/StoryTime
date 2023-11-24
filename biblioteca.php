@@ -53,7 +53,8 @@ include_once("./conexionServer.php");
 
 <?php
 //FALTA TERMINAR
-$sql = "SELECT titulo FROM biblioteca WHERE usuarios.id = biblioteca.id_usuario AND biblioteca.id = $id"; 
+$sql = "SELECT biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '". $_SESSION["id_usuario"]."'";
+// $sql = "SELECT titulo FROM biblioteca WHERE usuarios.id = biblioteca.id_usuario AND biblioteca.id = $id"; 
 $result = $conn->query($sql);
 
 if ($result) {
