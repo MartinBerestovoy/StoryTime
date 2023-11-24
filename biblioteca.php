@@ -53,14 +53,21 @@ include_once("./conexionServer.php");
 
 <?php
 //FALTA TERMINAR
-$sql = "SELECT biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '". $_SESSION["id_usuario"]."'";
-// $sql = "SELECT titulo FROM biblioteca WHERE usuarios.id = biblioteca.id_usuario AND biblioteca.id = $id"; 
+$sql = "SELECT biblioteca.id, biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '". $_SESSION["id_usuario"]."'";
 $result = $conn->query($sql);
+
+//MOSTRAR EL ID DE CADA LIBRO
+// if ($result->num_rows > 0) {
+//   while ($row = $result->fetch_assoc()) {
+//     echo '<label class="tituloLibro">'. $row["id"]. '</label>';
+//   }
+// }
 
 if ($result) {
     if ($result->num_rows > 0) {
         $fila = $result->fetch_assoc();
         $titulo = $fila['titulo'];
+        $id = $fila['id'];
     } else {
         $titulo = "Libro no encontrado";
     }
@@ -70,8 +77,9 @@ if ($result) {
 }
 ?>
 
+
 <a class="libro" onclick="redirectToLibroGenerado()">
-    <label class="tituloLibro"><?php echo $titulo; ?></label>
+    <label class="tituloLibro"><?php echo $titulo?></label>
 </a>
 
 <script>
@@ -97,7 +105,7 @@ if (isset($_SESSION["id_usuario"]))
   
   $result = $conn->query($sql);
 
-  var_dump($result);
+  // var_dump($result);
 
   // Verificar si la consulta fue exitosa
   if ($result) {

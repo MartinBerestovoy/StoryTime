@@ -92,8 +92,14 @@
     <img src="imgProyecto/Vector 3.svg" alt="logo" class="logo"> <!--Logo de App-->
   </div>
 
+<?php
+//FALTA QUE NO SE PASE EL HTML
+include "biblioteca.php";
+echo ($id) . " " . ($titulo);
+?>
+
   <div class="h1">
-    <h1 class="headline" id="titulo">LIBRO GENERADO</h1>
+    <h1 class="headline" id="titulo"><?php echo ($titulo) ?></h1>
   </div>
 
   <div class="libroGenerado">
