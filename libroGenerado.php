@@ -96,6 +96,24 @@
 //FALTA QUE NO SE PASE EL HTML
 include "biblioteca.php";
 echo ($id) . " " . ($titulo);
+
+// $sql = "SELECT biblioteca.id, biblioteca.titulo, biblioteca.text FROM biblioteca JOIN usuarios ON biblioteca.id";
+// $result = $conn->query($sql);
+
+// if ($result) {
+//   if ($result->num_rows > 0) {
+//       $fila = $result->fetch_assoc();
+//       $titulo = $fila['titulo'];
+//       $id = $fila['id'];
+//       $text = $fila['text'];
+//   } else {
+//       $titulo = "Libro no encontrado o inexistente";
+//   }
+// } else {
+//   // Manejar errores de consulta si es necesario
+//   $titulo = "Error en la consulta";
+// }
+// echo ($id) . " " . ($titulo);
 ?>
 
   <div class="h1">

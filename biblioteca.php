@@ -70,7 +70,7 @@ if ($result) {
         $titulo = $fila['titulo'];
         $id = $fila['id'];
     } else {
-        $titulo = "Libro no encontrado";
+        $titulo = "Libro no encontrado o inexistente";
     }
 } else {
     // Manejar errores de consulta si es necesario
