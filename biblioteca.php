@@ -70,14 +70,13 @@ if ($result) {
         $titulo = $fila['titulo'];
         $id = $fila['id'];
     } else {
-        $titulo = "Libro no encontrado o inexistente";
+        echo ("Libro no encontrado o inexistente");
     }
 } else {
     // Manejar errores de consulta si es necesario
     $titulo = "Error en la consulta";
 }
 ?>
-
 
 <a class="libro" onclick="redirectToLibroGenerado()">
     <label class="tituloLibro"><?php echo $titulo?></label>
