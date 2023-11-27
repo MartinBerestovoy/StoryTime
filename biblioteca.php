@@ -116,7 +116,7 @@ if (isset($_SESSION["id_usuario"]))
           while ($row = $result->fetch_assoc()) {
               // strtok() se usa aquí para obtener el substring hasta el primer salto de línea (\n)
               // $tituloCortado = htmlspecialchars(strtok($row["text"], "\n"));
-              echo '<div class="libro">';
+              echo '<a class="libro">';
               echo '<label class="tituloLibro">'. $row["titulo"]. '</label>';
               echo '<label class="contenidoLibros">';
               // Aquí podrías añadir más información de cada libro si fuera necesario
