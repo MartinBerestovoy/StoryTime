@@ -66,9 +66,13 @@ $result = $conn->query($sql);
 
 if ($result) {
     if ($result->num_rows > 0) {
-        $fila = $result->fetch_assoc();
-        $titulo = $fila['titulo'];
-        $id = $fila['id'];
+        while ($fila = $result->fetch_assoc()) {
+          $titulo = $fila['titulo'];
+          $id = $fila['id'];
+          echo '<a class="libro" onclick="redirectToLibroGenerado()">
+                <label class="tituloLibro">' . $titulo . '</label>
+              </a>';
+        }
     } else {
         echo ("Libro no encontrado o inexistente");
     }
@@ -77,10 +81,6 @@ if ($result) {
     $titulo = "Error en la consulta";
 }
 ?>
-
-<a class="libro" onclick="redirectToLibroGenerado()">
-    <label class="tituloLibro"><?php echo $titulo?></label>
-</a>
 
 <script>
     function redirectToLibroGenerado() {
@@ -102,7 +102,6 @@ if (isset($_SESSION["id_usuario"]))
 
   // Consulta SQL para obtener los títulos de los libros
   $sql = "SELECT biblioteca.id, biblioteca.titulo FROM biblioteca JOIN usuarios ON biblioteca.id_usuario = usuarios.id WHERE usuarios.id = '". $_SESSION["id_usuario"]."'";
-  
   $result = $conn->query($sql);
 
   // var_dump($result);
@@ -116,7 +115,6 @@ if (isset($_SESSION["id_usuario"]))
               // strtok() se usa aquí para obtener el substring hasta el primer salto de línea (\n)
               // $tituloCortado = htmlspecialchars(strtok($row["text"], "\n"));
               echo '<a class="libro">';
-              echo '<label class="tituloLibro">'. $row["titulo"]. '</label>';
               echo '<label class="contenidoLibros">';
               // Aquí podrías añadir más información de cada libro si fuera necesario
               echo '</label>';

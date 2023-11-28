@@ -7,7 +7,7 @@ error_reporting(0);
 session_start();
 
 if (isset($_SESSION["username"])) {
-  header("Location: panel.php");
+  header("Location: registro.php");
 }
 
 var_dump($_POST);
